@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: 'Montserrat', sans-serif;
+
+    background-color: #ddf5ec;
+
+
+}
+
+header {
+    width: 80%;
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    padding: 50px 0px;
+
+    /* border: 2px dashed #bdeede; */
+
+}
+
+footer {
+    width: 80%;
+    height: 20vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    line-height: 1.5rem;
+    color: #056341;
+
+    /* position: fixed;
+    bottom: 0; */
+
+
+    /* border: 2px dashed #bdeede; */
+
+}
+
+footer a {
+    text-decoration: none;
+    color: #056341;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.footer-title {}
+
+.footer-bottom {
+    margin-top: 50px;
+}
+
+.homepage {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin: auto;
+
+    /* border: 2px dashed #bdeede; */
+
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+    /* border: 2px dashed #bdeede; */
+}
+
+
+
+.navbar {
+    width: 100%;
+    margin: auto;
+
+}
+
+.ecg-container {
+    width: 150px;
+    padding: 5px;
+}
+
+.navlist ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 70px;
+
+    list-style: none;
+
+}
+
+.navlist ul li a {
+    text-decoration: none;
+    color: #056341;
+    font-weight: 800;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+/* .navbar a.active {
+    border-bottom: 2px solid #056341;
+    padding: 4px 8px;
+} */
+
+
+.services {
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+
+    /* border: 2px dashed #bdeede; */
+
+}
+
+.references {
+    height: 50vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+
+    /* border: 2px dashed #bdeede; */
+    padding-top: 50px;
+
+}
+
+
+
+.blog-page {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding-top: 50px;
+    color: #056341;
+}
