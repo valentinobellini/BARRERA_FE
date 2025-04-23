@@ -32,6 +32,10 @@ export default function NavBar() {
                             <NavLink to="/" end>Inicio</NavLink>
                         </li> */}
 
+                        <li className="nav-item">
+                            <NavLink to="/admin">*</NavLink>
+                        </li>
+
 
                         <li className="nav-item">
                             <NavLink to="/servicios">Servicios</NavLink>
