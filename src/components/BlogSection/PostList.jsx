@@ -137,14 +137,13 @@ const PostList = ({ posts }) => {
   return (
     <div className="posts-container">
       {posts.map(post => (
+
         <motion.div
           key={post.id}
           className={`post-row ${expandedPostId === post.id ? 'expanded' : ''}`}
           onClick={() => togglePost(post.id)}
-
-
-
         >
+
           <h3 className="post-title">{post.title}</h3>
           <p className="post-headline">{post.headline}</p>
 

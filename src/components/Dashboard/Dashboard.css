@@ -5,21 +5,35 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+.sidebar,
+.dashboard-header,
+.dashboard-list {
+    border: 1px solid #056341;
+    padding: 20px;
+    background-color: #ddf5ec;
+    border-radius: 8px;
+}
+
 /* Sidebar a sinistra */
 .sidebar {
     width: 240px;
-    padding: 0 0px 0px 0px;
-    border-right: 1px solid #e5e7eb;
+    height: 300px;
+    padding: 20px 20px 20px 20px;
+    margin: 0px 20px 0px 0px;
+
 }
 
 .sidebar h2 {
     font-size: 1.5rem;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
+
+
 }
 
 .sidebar ul {
     list-style: none;
     padding: 0;
+
 }
 
 .sidebar ul li {
@@ -27,12 +41,10 @@
     cursor: pointer;
     font-weight: 500;
     color: #111827;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.2s;
 }
 
 .sidebar ul li:hover {
-    border-bottom: 1px solid #10b981;
+    background-color: rgb(232, 248, 243);
 }
 
 /* Contenuto principale */
@@ -43,33 +55,39 @@
 /* Header con statistiche */
 .dashboard-header {
     display: flex;
+    justify-content: space-between;
     gap: 15px;
-    align-items: center;
-    margin-bottom: 30px;
-    flex-wrap: wrap;
+    margin-bottom: 20px;
+
 }
 
+/* .stat-box:first-child {
+    text-align: left;
+} */
+
 .stat-box {
-    width: 150px;
-    background-color: #ecfdf5;
-    color: #065f46;
-    border: 1px solid #a7f3d0;
-    padding: 12px 20px;
-    border-radius: 8px;
-    font-weight: 600;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
     text-align: center;
+}
+
+.stat-box-num {
+    font-size: 2rem;
+    font-weight: 900;
 }
 
 .create-post-btn {
     background-color: #10b981;
     color: white;
-    padding: 12px 16px;
+    font-size: 1rem;
+    padding: 10px 15px;
     border: none;
     border-radius: 6px;
     font-weight: bold;
     cursor: pointer;
     margin-left: auto;
-    transition: background 0.3s;
 }
 
 .create-post-btn:hover {
@@ -87,13 +105,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0px 0 0px;
-    border-bottom: 1px solid #e5e7eb;
-    transition: background 0.2s;
+    padding: 12px 20px;
+
 }
 
-.list-row:hover {
-    background-color: #f3f4f6;
+.list-row:hover,
+.list-row:hover span,
+.list-row:hover .actions {
+    background-color: rgb(232, 248, 243);
 }
 
 .actions svg {

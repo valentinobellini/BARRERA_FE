@@ -1,0 +1,67 @@
+.post-form {
+
+    border: 1px solid #ddd;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+}
+
+.post-form input[type="text"],
+.post-form input[type="number"],
+.post-form input[type="date"],
+.post-form input[type="file"],
+.post-form textarea {
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: white;
+}
+
+.post-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.post-form label {
+    font-size: 0.95rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.post-form button[type="submit"] {
+    background-color: #2d8cff;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.post-form button[type="submit"]:hover {
+    background-color: #166fd9;
+}
+
+.post-form button[type="button"] {
+    background-color: #ddd;
+    color: #333;
+    border: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.post-form button[type="button"]:hover {
+    background-color: #bbb;
+}

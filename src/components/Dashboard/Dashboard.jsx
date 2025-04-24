@@ -1,9 +1,11 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useAdminPostContext } from '../../contexts/AdminPostContext'
 import { useAdminTagContext } from '../../contexts/AdminTagContext'
 
 import { FaEdit, FaTrash } from 'react-icons/fa'
 import './Dashboard.css'
+import './DashboardForm.css'
+
 
 export default function Dashboard() {
     const [activeTab, setActiveTab] = useState('posts')
@@ -24,6 +26,35 @@ export default function Dashboard() {
         tags: '',
         image: null
     })
+
+    const alphabet = "0123456789".split("");
+
+    function FlipDigit({ target, delay }) {
+        const [digit, setDigit] = useState(" ");
+        const [done, setDone] = useState(false);
+
+
+        useEffect(() => {
+            if (done) return;
+
+            let i = 0;
+            const interval = setInterval(() => {
+                const random = alphabet[Math.floor(Math.random() * alphabet.length)];
+                setDigit(random);
+                i++;
+                if (i > 25) {
+                    clearInterval(interval);
+                    setDigit(target.toString());
+                    setDone(true);
+                }
+            }, delay / 10);
+
+            return () => clearInterval(interval);
+        }, [target, delay, done]);
+
+        return <span style={{ display: "inline-block" }}>{digit}</span>;
+    }
+
 
     const handleChange = (e) => {
         const { name, value, type, files } = e.target
@@ -59,6 +90,13 @@ export default function Dashboard() {
         })
     }
 
+    const confirmAndDelete = (postId, deletePost) => {
+        const confirmed = window.confirm('Sei sicuro di voler eliminare questo post? Questa azione è irreversibile.');
+        if (confirmed) {
+            deletePost(postId);
+        }
+    };
+
     return (
         <div className="dashboard">
             {/* Sidebar */}
@@ -74,10 +112,34 @@ export default function Dashboard() {
             {/* Main content */}
             <div className="main-content">
                 <div className="dashboard-header">
-                    <div className="stat-box">✅ Publicados: {publishedPosts.length}</div>
-                    <div className="stat-box">🕒 Borradores: {draftPosts.length}</div>
-                    <div className="stat-box">🏷️ Etiquetas: {tags.length}</div>
-                    <button className="create-post-btn" onClick={() => setShowForm(true)}>+ Crear nuevo post</button>
+
+                    <div className="stat-box">
+                        <div className="stat-box-num">
+                            {publishedPosts.length.toString().split("").map((char, i) => (
+                                <FlipDigit key={i} target={char} delay={300 + i * 20} />
+                            ))}
+                        </div>
+                        <div>✅ Publicados</div>
+                    </div>
+
+                    <div className="stat-box">
+                        <div className="stat-box-num">
+                            {draftPosts.length.toString().split("").map((char, i) => (
+                                <FlipDigit key={i} target={char} delay={300 + i * 20} />
+                            ))}
+                        </div>
+                        <div>🕒 Borradores</div>
+                    </div>
+                    <div className="stat-box">
+                        <div className="stat-box-num">
+                            {tags.length.toString().split("").map((char, i) => (
+                                <FlipDigit key={i} target={char} delay={300 + i * 20} />
+                            ))}
+                        </div>
+                        <div>🏷️ Etiquetas</div>
+                    </div>
+
+                    <button className="create-post-btn" onClick={() => setShowForm(true)}>Crear nuevo post</button>
                 </div>
 
                 {showForm && (
@@ -101,13 +163,13 @@ export default function Dashboard() {
                 <div className="dashboard-list">
                     {activeTab === 'posts' && (
                         <>
-                            <h3>Publicaciones</h3>
+                            <h3>Publicados</h3>
                             {publishedPosts.map(post => (
                                 <div className="list-row" key={post.id}>
                                     <span>{post.title}</span>
                                     <div className="actions">
                                         <FaEdit />
-                                        <FaTrash onClick={() => deletePost(post.id)} />
+                                        <FaTrash onClick={() => confirmAndDelete(post.id, deletePost)} />
                                     </div>
                                 </div>
                             ))}
@@ -122,7 +184,7 @@ export default function Dashboard() {
                                     <span>{post.title}</span>
                                     <div className="actions">
                                         <FaEdit />
-                                        <FaTrash onClick={() => deletePost(post.id)} />
+                                        <FaTrash onClick={() => confirmAndDelete(post.id, deletePost)} />
                                     </div>
                                 </div>
                             ))}
