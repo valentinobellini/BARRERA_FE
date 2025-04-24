@@ -6,6 +6,8 @@ import { FaEdit, FaTrash } from 'react-icons/fa'
 import './Dashboard.css'
 import './DashboardForm.css'
 
+import { motion, useInView } from 'framer-motion'
+import { useRef } from 'react'
 
 export default function Dashboard() {
     const [activeTab, setActiveTab] = useState('posts')
@@ -16,6 +18,9 @@ export default function Dashboard() {
 
     const publishedPosts = posts.filter(p => p.status === 'published')
     const draftPosts = posts.filter(p => p.status === 'draft')
+
+    const ref = useRef(null)
+    const isInView = useInView(ref, { once: true, margin: "-100px" })
 
     const [formData, setFormData] = useState({
         title: '',
@@ -98,19 +103,50 @@ export default function Dashboard() {
     };
 
     return (
-        <div className="dashboard">
+        <motion.div
+            className="dashboard"
+
+            ref={ref}
+            initial={{ opacity: 0, }}
+            animate={isInView ? { opacity: 1, } : {}}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+        >
             {/* Sidebar */}
-            <aside className="sidebar">
+            <motion.aside
+                className="sidebar"
+                initial={{ opacity: 0, x: -100 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{
+                    duration: 1, ease: 'easeOut', type: "spring",
+                    stiffness: 120,    // quanto è “dura” la molla
+                    damping: 20,       // quanto smorza l’effetto di rimbalzo
+                    mass: 1,           // più massa = più lento
+                    bounce: 0.3,       // rimbalzo visibile
+                    delay: 0.1
+                }}
+            >
                 <h2>Panel de administración</h2>
                 <ul>
                     <li onClick={() => setActiveTab('posts')}>📄 Publicados</li>
                     <li onClick={() => setActiveTab('drafts')}>📝 Borradores</li>
                     <li onClick={() => setActiveTab('tags')}>🏷️ Etiquetas</li>
                 </ul>
-            </aside>
+            </motion.aside>
 
             {/* Main content */}
-            <div className="main-content">
+            <motion.div
+                className="main-content"
+                initial={{ opacity: 0, x: 1000 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{
+                    duration: 1, ease: 'easeOut', type: "spring",
+                    stiffness: 120,    // quanto è “dura” la molla
+                    damping: 20,       // quanto smorza l’effetto di rimbalzo
+                    mass: 1,           // più massa = più lento
+                    bounce: 0.3,       // rimbalzo visibile
+                    delay: 0.1
+                }}
+            >
                 <div className="dashboard-header">
 
                     <div className="stat-box">
@@ -143,19 +179,61 @@ export default function Dashboard() {
                 </div>
 
                 {showForm && (
+
                     <form className="post-form" onSubmit={(e) => e.preventDefault()}>
-                        <input type="text" name="title" placeholder="Título" onChange={handleChange} value={formData.title} required />
-                        <input type="text" name="headline" placeholder="Subtítulo" onChange={handleChange} value={formData.headline} required />
-                        <input type="number" name="reading_time" placeholder="Tiempo de lectura (min)" onChange={handleChange} value={formData.reading_time} />
-                        <input type="date" name="published_at" onChange={handleChange} value={formData.published_at} />
-                        <textarea name="content" placeholder="Contenido del post..." onChange={handleChange} value={formData.content} required />
-                        <input type="text" name="tags" placeholder="Etiquetas separadas por coma" onChange={handleChange} value={formData.tags} />
-                        <input type="file" name="image" onChange={handleChange} />
+
+                        <div className='form-wrapper-title'>
+                            <input type="text"
+                                name="title"
+                                placeholder="Título"
+                                onChange={handleChange}
+                                value={formData.title}
+                                required />
+
+                            <input type="text"
+                                name="headline"
+                                placeholder="Subtítulo"
+                                onChange={handleChange}
+                                value={formData.headline}
+                                required />
+                        </div>
+
+                        <div className='form-wrapper-time'>
+                            <input type="number"
+                                name="reading_time"
+                                placeholder="Tiempo de lectura (min)" onChange={handleChange}
+                                value={formData.reading_time} />
+
+                            <input type="date"
+                                name="published_at"
+                                onChange={handleChange}
+                                value={formData.published_at} />
+
+                        </div>
+
+                        <textarea name="content"
+                            placeholder="Contenido del post..."
+                            onChange={handleChange}
+                            value={formData.content} required />
+
+                        <input type="text"
+                            name="tags"
+                            placeholder="Etiquetas separadas por coma" onChange={handleChange}
+                            value={formData.tags} />
+
+
 
                         <div className="form-buttons">
-                            <button type="button" onClick={() => handleSubmit(false)}>💾 Guardar como borrador</button>
-                            <button type="button" onClick={() => handleSubmit(true)}>🚀 Publicar ahora</button>
-                            <button type="button" onClick={() => setShowForm(false)}>Cancelar</button>
+                            <input type="file"
+                                name="image"
+                                onChange={handleChange} />
+
+                            <button type="button"
+                                onClick={() => handleSubmit(false)}>💾 Guardar como borrador</button>
+                            <button type="button"
+                                onClick={() => handleSubmit(true)}>🚀 Publicar ahora</button>
+                            <button type="button"
+                                onClick={() => setShowForm(false)}>Cancelar</button>
                         </div>
                     </form>
                 )}
@@ -206,7 +284,7 @@ export default function Dashboard() {
                         </>
                     )}
                 </div>
-            </div>
-        </div>
+            </motion.div>
+        </motion.div>
     )
 }

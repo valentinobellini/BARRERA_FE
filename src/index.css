@@ -108,8 +108,8 @@ footer a {
     text-transform: uppercase;
 }
 
-.navlist ul li a:hover {
-    scale: 1.03;
+.nav-item:hover {
+    scale: 1.2;
 }
 
 /* .navbar a.active {
