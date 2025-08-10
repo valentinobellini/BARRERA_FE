@@ -1,5 +1,5 @@
 // import { Link } from 'react-router-dom'
-import './serviceCard.css'
+import './ServiceCard.css'
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 

@@ -1,0 +1,106 @@
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.review-card {
+    width: 400px;
+    height: 600px;
+    background-color: #a3e6cc;
+    text-align: center;
+    margin: 100px 0;
+    border-radius: 50px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.14);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.review-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.18), 0 6px 12px rgba(0, 0, 0, 0.14);
+}
+
+
+.review-name {
+    color: #056341;
+}
+
+.review-text {
+    padding: 50px;
+    color: #056341;
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+}
+
+.review-date {
+    margin-bottom: 20px;
+}
+
+.star {
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Wrapper: flex con bottoni ai margini e cards centrate */
+.reviews-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+    margin: 60px 0;
+}
+
+/* Vista centrale con 3 card affiancate, centrate */
+.carousel-viewport {
+    display: flex;
+    justify-content: center;
+    /* centra il blocco delle 3 card */
+    align-items: stretch;
+    gap: 100px;
+    flex: 1;
+    /* prende lo spazio tra i bottoni */
+}
+
+/* Bottoni semplici */
+.carousel-btn {
+    border: 0;
+    background: #ffffffcc;
+    color: #056341;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .2);
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+
+.carousel-btn:hover {
+    background: #ffffff;
+}
+
+.carousel-btn:disabled {
+    opacity: .45;
+    cursor: not-allowed;
+}
+
+/* (facoltativo) card verticali e strette */
+.review-card {
+    flex: 0 0 300px;
+    /* larghezza fissa per avere esattamente 3 in fila */
+    height: 500px;
+}

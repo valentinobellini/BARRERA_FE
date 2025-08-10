@@ -131,15 +131,7 @@ footer a {
 
 
 
-.references {
-    height: 50vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: top;
-
-    /* border: 2px dashed #bdeede; */
-    padding-top: 50px;
-}
+.references {}
 
 .references h2 {
     font-size: 1.8rem;

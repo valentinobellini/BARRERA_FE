@@ -1,7 +1,7 @@
-import TextCard from '../components/TextCard/TextCard'
-import { Link } from 'react-router-dom'
 import HeroSection from '../components/HeroSection/HeroSection'
 import ServiceCard from '../components/ServiceCard/ServiceCard'
+import ReviewCard from '../components/Reviews/ReviewCard'
+import ReviewsCarousel from '../components/Reviews/ReveiwsCarousel'
 
 const HomePage = () => {
     return (
@@ -44,7 +44,8 @@ const HomePage = () => {
             <section className="references">
                 <h2>REFERENCIAS</h2>
 
-
+                {/* <ReviewCard /> */}
+                <ReviewsCarousel />
 
             </section>
 
