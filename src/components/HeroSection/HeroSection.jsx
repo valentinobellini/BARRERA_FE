@@ -26,7 +26,7 @@ const HeroSection = () => {
                 initial={{ opacity: 0, y: 150 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, ease: 'easeOut', delay: 0.1, type: 'spring' }}>
-                La Dra. Lucrecia Ceja Barrera es una especialista en Medicina Interna con más de 30 años de experiencia en Monterrey, N.L. Brindando atención integral, la Dra. Ceja se enfoca en el tratamiento de enfermedades crónicas como diabetes e hipertensión, con un compromiso hacia el bienestar y la calidad de vida de sus pacientes.
+                Con más de tres décadas de práctica clínica ininterrumpida, la Dra. Lucrecia Ceja Barrera se ha consolidado como un referente de la Medicina Interna en Monterrey, N.L. Su consulta se fundamenta en la prevención, el diagnóstico temprano y el tratamiento integral de patologías crónicas como diabetes, hipertensión arterial, dislipidemias y enfermedades autoinmunes, combinando protocolos basados en guías internacionales con un trato cercano, empático y absolutamente personalizado. A lo largo de estos 30 años, la doctora ha atendido a miles de pacientes, favoreciendo no solo su control metabólico, sino también su bienestar emocional y social, pilares indispensables para una mejor calidad de vida a corto y largo plazo.
             </motion.p>
 
             {/* <Link to={link} className="text-card-link">

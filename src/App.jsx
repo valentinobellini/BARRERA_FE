@@ -16,6 +16,8 @@ import TrayectoriaPage from './pages/TrayectoriaPage'
 import ContactosPage from './pages/ContactosPage'
 import BlogPage from './pages/BlogPage'
 import AdminPage from './pages/AdminPage'
+import PostDetail from './components/BlogSection/PostDetail'
+
 
 function App() {
   return (
@@ -31,6 +33,8 @@ function App() {
             <Route path="trayectoria-profesional" element={<TrayectoriaPage />} />
             <Route path="contactos" element={<ContactosPage />} />
             <Route path="blog" element={<BlogPage />} />
+            <Route path="/blog/:id/:slug" element={<PostDetail />} />
+
 
             {/* Admin */}
             <Route path="/admin" element={

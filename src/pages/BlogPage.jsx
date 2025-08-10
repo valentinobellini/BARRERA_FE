@@ -6,8 +6,8 @@ const BlogPage = () => {
     const { posts, filteredPosts, searchQuery } = usePostContext()
 
     const postsToShow = searchQuery.trim()
-        ? Array.isArray(filteredPosts) ? filteredPosts : []
-        : posts
+        ? (Array.isArray(filteredPosts) ? filteredPosts : [])
+        : posts;
 
     return (
         <div className="blog-page">

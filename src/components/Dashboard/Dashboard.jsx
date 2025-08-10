@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useAdminPostContext } from '../../contexts/AdminPostContext'
 import { useAdminTagContext } from '../../contexts/AdminTagContext'
 
@@ -7,7 +7,7 @@ import './Dashboard.css'
 import './DashboardForm.css'
 
 import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
+
 
 export default function Dashboard() {
     const [activeTab, setActiveTab] = useState('posts')
@@ -118,8 +118,8 @@ export default function Dashboard() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{
                     duration: 1, ease: 'easeOut', type: "spring",
-                    stiffness: 120,    // quanto è “dura” la molla
-                    damping: 20,       // quanto smorza l’effetto di rimbalzo
+                    stiffness: 123,    // quanto è “dura” la molla
+                    damping: 18,       // quanto smorza l’effetto di rimbalzo
                     mass: 1,           // più massa = più lento
                     bounce: 0.3,       // rimbalzo visibile
                     delay: 0.1
@@ -140,8 +140,8 @@ export default function Dashboard() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{
                     duration: 1, ease: 'easeOut', type: "spring",
-                    stiffness: 120,    // quanto è “dura” la molla
-                    damping: 20,       // quanto smorza l’effetto di rimbalzo
+                    stiffness: 123,    // quanto è “dura” la molla
+                    damping: 18,       // quanto smorza l’effetto di rimbalzo
                     mass: 1,           // più massa = più lento
                     bounce: 0.3,       // rimbalzo visibile
                     delay: 0.1
