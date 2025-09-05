@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
+::-webkit-scrollbar {
+    display: none;
+}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
+
 }
 
 body {
@@ -13,15 +17,22 @@ body {
 }
 
 header {
-    width: 80%;
-    height: 15vh;
+    width: 100%;
+    height: 150px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: auto;
+    margin-bottom: 150px;
     padding: 50px 0px;
-    /* background-color: blue; */
-    /* border: 2px dashed #bdeede; */
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 5px 25px -10px rgba(0, 0, 0, 0.25);
+
+}
+
+.header-wrapper {
+    width: 80%;
+    margin: auto;
 
 }
 
@@ -57,7 +68,7 @@ footer a {
 }
 
 .homepage {
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: left;
@@ -103,7 +114,7 @@ footer a {
     text-decoration: none;
     color: #056341;
     font-weight: 800;
-    font-size: 1rem;
+    font-size: 18px;
     text-transform: uppercase;
 }
 
@@ -116,27 +127,49 @@ footer a {
     padding: 4px 8px;
 } */
 
-
 .services {
-    display: flex;
-    justify-content: space-between;
-    align-items: top;
-
-    /* border: 2px dashed #bdeede; */
+    background-color: #F4F4F4;
     margin-top: 150px;
     margin-bottom: 150px;
 }
 
+.services-wrapper {
+    align-items: top;
+    width: 80%;
+    margin: auto;
+    padding: 130px 0px;
+}
+
+.services-wrapper h2 {
+    font-size: 3.1rem;
+    font-weight: 800;
+    color: #056341;
+    width: 800px;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 56px;
+}
 
 
+.services-card-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
 
 
-.references {}
+.references {
+    width: 80%;
+    margin: auto;
+}
 
 .references h2 {
-    font-size: 1.8rem;
-    font-weight: 700;
+    font-size: 3.1rem;
+    font-weight: 800;
     color: #056341;
+    width: 800px;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 56px;
 }
 
 
