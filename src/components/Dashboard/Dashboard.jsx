@@ -1,28 +1,54 @@
 import { useState, useEffect, useRef } from 'react'
 import { useAdminPostContext } from '../../contexts/AdminPostContext'
 import { useAdminTagContext } from '../../contexts/AdminTagContext'
-
-import { FaEdit, FaTrash } from 'react-icons/fa'
+import { FaEdit, FaTrash, FaPlus } from 'react-icons/fa'
 import './Dashboard.css'
 import './DashboardForm.css'
-
 import { motion, useInView } from 'framer-motion'
-
 
 export default function Dashboard() {
     const [activeTab, setActiveTab] = useState('posts')
     const [showForm, setShowForm] = useState(false)
+    const [formMode, setFormMode] = useState(null) // 'post' | 'tag'
+    const [editingPost, setEditingPost] = useState(null)
+    const [editingTag, setEditingTag] = useState(null)
 
-    const { posts, deletePost, createPost } = useAdminPostContext()
-    const { tags, deleteTag } = useAdminTagContext()
+    const { posts, deletePost, createPost, updatePost } = useAdminPostContext()
+    const { tags, deleteTag, createTag, updateTag } = useAdminTagContext()
 
-    const publishedPosts = posts.filter(p => p.status === 'published')
-    const draftPosts = posts.filter(p => p.status === 'draft')
+
+    // Filtri robusti: supporta sia status ('published'/'draft') sia is_published (1/0)
+    const publishedPosts = posts.filter(p => (p?.status ? p.status === 'published' : Number(p?.is_published) === 1))
+    const draftPosts = posts.filter(p => (p?.status ? p.status === 'draft' : Number(p?.is_published) === 0))
+
+    // ---- FlipDigit: anima una sola volta quando arrivano i dati
+    const didAnimate = useRef(false)
+    const [animatedCounts, setAnimatedCounts] = useState({ published: null, drafts: null, tags: null })
+    const [animateStats, setAnimateStats] = useState(true)
+
+    useEffect(() => {
+        if (!didAnimate.current && (posts.length || tags.length)) {
+            setAnimatedCounts({
+                published: publishedPosts.length,
+                drafts: draftPosts.length,
+                tags: tags.length
+            })
+
+            // lascia il tempo ai FlipDigit di completare (~1.2s)
+            const t = setTimeout(() => {
+                setAnimateStats(false)
+                didAnimate.current = true
+            }, 2000)
+
+            return () => clearTimeout(t)
+        }
+    }, [posts, tags])
 
     const ref = useRef(null)
-    const isInView = useInView(ref, { once: true, margin: "-100px" })
+    const isInView = useInView(ref, { once: true, margin: '-100px' })
 
-    const [formData, setFormData] = useState({
+    // ---- Form stati
+    const initialPostForm = {
         title: '',
         headline: '',
         reading_time: '',
@@ -30,106 +56,161 @@ export default function Dashboard() {
         content: '',
         tags: '',
         image: null
-    })
+    }
+    const [postForm, setPostForm] = useState(initialPostForm)
+    const [tagForm, setTagForm] = useState({ name: '' })
 
-    const alphabet = "0123456789".split("");
-
+    // ---- FlipDigit component (singolo render al mount)
+    const DIGITS = '0123456789'.split('')
     function FlipDigit({ target, delay }) {
-        const [digit, setDigit] = useState(" ");
-        const [done, setDone] = useState(false);
-
-
+        const [digit, setDigit] = useState(' ')
+        const [done, setDone] = useState(false)
         useEffect(() => {
-            if (done) return;
-
-            let i = 0;
-            const interval = setInterval(() => {
-                const random = alphabet[Math.floor(Math.random() * alphabet.length)];
-                setDigit(random);
-                i++;
+            if (done) return
+            let i = 0
+            const it = setInterval(() => {
+                const random = DIGITS[Math.floor(Math.random() * DIGITS.length)]
+                setDigit(random)
+                i++
                 if (i > 25) {
-                    clearInterval(interval);
-                    setDigit(target.toString());
-                    setDone(true);
+                    clearInterval(it)
+                    setDigit(target.toString())
+                    setDone(true)
                 }
-            }, delay / 10);
-
-            return () => clearInterval(interval);
-        }, [target, delay, done]);
-
-        return <span style={{ display: "inline-block" }}>{digit}</span>;
+            }, delay / 10)
+            return () => clearInterval(it)
+        }, [])
+        return <span style={{ display: 'inline-block' }}>{digit}</span>
     }
 
+    // ---- Helpers: apri/chiudi form
+    const closeForm = () => {
+        setShowForm(false)
+        setFormMode(null)
+        setEditingPost(null)
+        setEditingTag(null)
+        setPostForm(initialPostForm)
+        setTagForm({ name: '' })
+    }
 
-    const handleChange = (e) => {
+    const handleTabChange = (tab) => {
+        setActiveTab(tab)
+        // chiudi form se si cambia tab
+        closeForm()
+    }
+
+    // ---- POST: create / edit
+    const openCreatePost = () => {
+        setFormMode('post')
+        setEditingPost(null)
+        setPostForm(initialPostForm)
+        setShowForm(true)
+    }
+
+    const openEditPost = (post) => {
+        setFormMode('post')
+        setEditingPost(post)
+        setPostForm({
+            title: post.title || '',
+            headline: post.headline || '',
+            reading_time: post.reading_time || '',
+            published_at: post.published_at ? String(post.published_at).slice(0, 10) : '',
+            content: post.content || '',
+            tags: Array.isArray(post.tags) ? post.tags.join(', ') : '',
+            image: null
+        })
+        setShowForm(true)
+    }
+
+    const onChangePostForm = (e) => {
         const { name, value, type, files } = e.target
-        setFormData(prev => ({
+        setPostForm(prev => ({
             ...prev,
             [name]: type === 'file' ? files[0] : value
         }))
     }
 
-    const handleSubmit = async (publishNow = false) => {
+    const submitPost = async (publishNow = false) => {
         const data = new FormData()
-
-        Object.entries(formData).forEach(([key, val]) => {
+        Object.entries(postForm).forEach(([key, val]) => {
             if (key === 'tags') {
-                data.append('tags', JSON.stringify(val.split(',').map(t => t.trim())))
+                const arr = val ? val.split(',').map(t => t.trim()).filter(Boolean) : []
+                data.append('tags', JSON.stringify(arr))
+            } else if (key === 'image') {
+                if (val) data.append('image', val)
             } else {
-                data.append(key, val)
+                data.append(key, val ?? '')
             }
         })
+        // Se editing: mantieni stato corrente se non pubblichi; se creazione: 0
+        const currentPublished = editingPost ? String(editingPost.is_published ?? 0) : '0'
+        data.append('is_published', publishNow ? '1' : currentPublished)
 
-        data.append('is_published', publishNow ? '1' : '0')
-
-        await createPost(data)
-        setShowForm(false)
-        setFormData({
-            title: '',
-            headline: '',
-            reading_time: '',
-            published_at: '',
-            content: '',
-            tags: '',
-            image: null
-        })
+        if (editingPost) {
+            await updatePost(editingPost.id, data)
+        } else {
+            await createPost(data)
+        }
+        closeForm()
     }
 
-    const confirmAndDelete = (postId, deletePost) => {
-        const confirmed = window.confirm('Sei sicuro di voler eliminare questo post? Questa azione è irreversibile.');
-        if (confirmed) {
-            deletePost(postId);
+    const confirmAndDelete = (postId) => {
+        const ok = window.confirm('Sei sicuro di voler eliminare questo post? Azione irreversibile.')
+        if (ok) deletePost(postId)
+    }
+
+    // ---- TAG: create / edit
+    const openCreateTag = () => {
+        setFormMode('tag')
+        setEditingTag(null)
+        setTagForm({ name: '' })
+        setShowForm(true)
+    }
+
+    const openEditTag = (tag) => {
+        setFormMode('tag')
+        setEditingTag(tag)
+        setTagForm({ name: tag.name || '' })
+        setShowForm(true)
+    }
+
+    const onChangeTagForm = (e) => {
+        setTagForm({ name: e.target.value })
+    }
+
+    const submitTag = async () => {
+        if (editingTag) {
+            await updateTag(editingTag.id, tagForm.name)
+        } else {
+            await createTag(tagForm.name)
         }
-    };
+        closeForm()
+    }
+
+    // Mostra "Guardar como borrador" solo per creazione o per post in bozza
+    const isPostDraft = (post) => (post?.status ? post.status === 'draft' : Number(post?.is_published) === 0)
+    const showSaveDraft = !editingPost || isPostDraft(editingPost)
 
     return (
         <motion.div
             className="dashboard"
-
             ref={ref}
-            initial={{ opacity: 0, }}
-            animate={isInView ? { opacity: 1, } : {}}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
         >
             {/* Sidebar */}
             <motion.aside
                 className="sidebar"
                 initial={{ opacity: 0, x: -100 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{
-                    duration: 1, ease: 'easeOut', type: "spring",
-                    stiffness: 123,    // quanto è “dura” la molla
-                    damping: 18,       // quanto smorza l’effetto di rimbalzo
-                    mass: 1,           // più massa = più lento
-                    bounce: 0.3,       // rimbalzo visibile
-                    delay: 0.1
-                }}
+                transition={{ duration: 1, ease: 'easeOut', type: 'spring', stiffness: 123, damping: 18, bounce: 0.3, delay: 0.1 }}
             >
                 <h2>Panel de administración</h2>
                 <ul>
-                    <li onClick={() => setActiveTab('posts')}>📄 Publicados</li>
-                    <li onClick={() => setActiveTab('drafts')}>📝 Borradores</li>
-                    <li onClick={() => setActiveTab('tags')}>🏷️ Etiquetas</li>
+                    <li onClick={() => handleTabChange('posts')}>Publicados</li>
+                    <li onClick={() => handleTabChange('drafts')}>Borradores</li>
+                    <li onClick={() => handleTabChange('tags')}>Etiquetas</li>
                 </ul>
             </motion.aside>
 
@@ -138,106 +219,89 @@ export default function Dashboard() {
                 className="main-content"
                 initial={{ opacity: 0, x: 1000 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{
-                    duration: 1, ease: 'easeOut', type: "spring",
-                    stiffness: 123,    // quanto è “dura” la molla
-                    damping: 18,       // quanto smorza l’effetto di rimbalzo
-                    mass: 1,           // più massa = più lento
-                    bounce: 0.3,       // rimbalzo visibile
-                    delay: 0.1
-                }}
+                transition={{ duration: 1, ease: 'easeOut', type: 'spring', stiffness: 123, damping: 18, bounce: 0.3, delay: 0.1 }}
             >
                 <div className="dashboard-header">
-
                     <div className="stat-box">
                         <div className="stat-box-num">
-                            {publishedPosts.length.toString().split("").map((char, i) => (
-                                <FlipDigit key={i} target={char} delay={300 + i * 20} />
-                            ))}
+                            {animateStats
+                                ? animatedCounts.published?.toString().split('').map((c, i) => (
+                                    <FlipDigit key={`p-${i}`} target={c} delay={300 + i * 20} />
+                                ))
+                                : publishedPosts.length}
                         </div>
-                        <div>✅ Publicados</div>
+                        <div>N. Publicados</div>
                     </div>
 
                     <div className="stat-box">
                         <div className="stat-box-num">
-                            {draftPosts.length.toString().split("").map((char, i) => (
-                                <FlipDigit key={i} target={char} delay={300 + i * 20} />
-                            ))}
+                            {animateStats
+                                ? animatedCounts.drafts?.toString().split('').map((c, i) => (
+                                    <FlipDigit key={`d-${i}`} target={c} delay={300 + i * 20} />
+                                ))
+                                : draftPosts.length}
                         </div>
-                        <div>🕒 Borradores</div>
-                    </div>
-                    <div className="stat-box">
-                        <div className="stat-box-num">
-                            {tags.length.toString().split("").map((char, i) => (
-                                <FlipDigit key={i} target={char} delay={300 + i * 20} />
-                            ))}
-                        </div>
-                        <div>🏷️ Etiquetas</div>
+                        <div>N. Borradores</div>
                     </div>
 
-                    <button className="create-post-btn" onClick={() => setShowForm(true)}>Crear nuevo post</button>
+                    <div className="stat-box">
+                        <div className="stat-box-num">
+                            {animateStats
+                                ? animatedCounts.tags?.toString().split('').map((c, i) => (
+                                    <FlipDigit key={`t-${i}`} target={c} delay={300 + i * 20} />
+                                ))
+                                : tags.length}
+                        </div>
+                        <div>N. Etiquetas</div>
+                    </div>
+
+                    {activeTab !== 'tags' ? (
+                        <button className="create-post-btn" onClick={openCreatePost}><FaPlus /> Crear nuevo post</button>
+                    ) : (
+                        <button className="create-post-btn" onClick={openCreateTag}><FaPlus /> Crear etiqueta</button>
+                    )}
                 </div>
 
-                {showForm && (
-
+                {/* FORM AREA */}
+                {showForm && formMode === 'post' && (
                     <form className="post-form" onSubmit={(e) => e.preventDefault()}>
-
-                        <div className='form-wrapper-title'>
-                            <input type="text"
-                                name="title"
-                                placeholder="Título"
-                                onChange={handleChange}
-                                value={formData.title}
-                                required />
-
-                            <input type="text"
-                                name="headline"
-                                placeholder="Subtítulo"
-                                onChange={handleChange}
-                                value={formData.headline}
-                                required />
+                        <div className="form-wrapper-title">
+                            <input name="title" placeholder="Título" value={postForm.title} onChange={onChangePostForm} required />
+                            <input name="headline" placeholder="Subtítulo" value={postForm.headline} onChange={onChangePostForm} required />
                         </div>
 
-                        <div className='form-wrapper-time'>
-                            <input type="number"
-                                name="reading_time"
-                                placeholder="Tiempo de lectura (min)" onChange={handleChange}
-                                value={formData.reading_time} />
-
-                            <input type="date"
-                                name="published_at"
-                                onChange={handleChange}
-                                value={formData.published_at} />
-
+                        <div className="form-wrapper-time">
+                            <input type="number" name="reading_time" placeholder="Tiempo de lectura (min)" value={postForm.reading_time} onChange={onChangePostForm} />
+                            <input type="date" name="published_at" value={postForm.published_at} onChange={onChangePostForm} />
                         </div>
 
-                        <textarea name="content"
-                            placeholder="Contenido del post..."
-                            onChange={handleChange}
-                            value={formData.content} required />
-
-                        <input type="text"
-                            name="tags"
-                            placeholder="Etiquetas separadas por coma" onChange={handleChange}
-                            value={formData.tags} />
-
-
+                        <textarea name="content" placeholder="Contenido del post..." value={postForm.content} onChange={onChangePostForm} required />
+                        <input name="tags" placeholder="Etiquetas separadas por coma" value={postForm.tags} onChange={onChangePostForm} />
 
                         <div className="form-buttons">
-                            <input type="file"
-                                name="image"
-                                onChange={handleChange} />
-
-                            <button type="button"
-                                onClick={() => handleSubmit(false)}>💾 Guardar como borrador</button>
-                            <button type="button"
-                                onClick={() => handleSubmit(true)}>🚀 Publicar ahora</button>
-                            <button type="button"
-                                onClick={() => setShowForm(false)}>Cancelar</button>
+                            <input type="file" name="image" onChange={onChangePostForm} />
+                            {showSaveDraft && (
+                                <button type="button" onClick={() => submitPost(false)}>Guardar como borrador</button>
+                            )}
+                            <button type="button" onClick={() => submitPost(true)}>Publicar ahora</button>
+                            <button type="button" onClick={closeForm}>Cancelar</button>
                         </div>
                     </form>
                 )}
 
+                {showForm && formMode === 'tag' && (
+                    <form className="post-form" onSubmit={(e) => e.preventDefault()}>
+                        <div className="form-wrapper-title">
+                            <input name="name" placeholder="Nombre de la etiqueta" value={tagForm.name} onChange={onChangeTagForm} required />
+                        </div>
+                        <div className="form-buttons">
+                            <button type="button" onClick={submitTag}>{editingTag ? 'Guardar cambios' : 'Crear etiqueta'}</button>
+                            <button type="button" onClick={closeForm}>Cancelar</button>
+                        </div>
+                    </form>
+                )}
+
+                {/* LISTE */}
                 <div className="dashboard-list">
                     {activeTab === 'posts' && (
                         <>
@@ -246,8 +310,8 @@ export default function Dashboard() {
                                 <div className="list-row" key={post.id}>
                                     <span>{post.title}</span>
                                     <div className="actions">
-                                        <FaEdit />
-                                        <FaTrash onClick={() => confirmAndDelete(post.id, deletePost)} />
+                                        <FaEdit onClick={() => openEditPost(post)} />
+                                        <FaTrash onClick={() => confirmAndDelete(post.id)} />
                                     </div>
                                 </div>
                             ))}
@@ -261,8 +325,8 @@ export default function Dashboard() {
                                 <div className="list-row" key={post.id}>
                                     <span>{post.title}</span>
                                     <div className="actions">
-                                        <FaEdit />
-                                        <FaTrash onClick={() => confirmAndDelete(post.id, deletePost)} />
+                                        <FaEdit onClick={() => openEditPost(post)} />
+                                        <FaTrash onClick={() => confirmAndDelete(post.id)} />
                                     </div>
                                 </div>
                             ))}
@@ -276,7 +340,7 @@ export default function Dashboard() {
                                 <div className="list-row" key={tag.id}>
                                     <span>{tag.name}</span>
                                     <div className="actions">
-                                        <FaEdit />
+                                        <FaEdit onClick={() => openEditTag(tag)} />
                                         <FaTrash onClick={() => deleteTag(tag.id)} />
                                     </div>
                                 </div>

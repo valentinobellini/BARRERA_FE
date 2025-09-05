@@ -5,39 +5,6 @@ import './PostDetail.css'
 
 const alphabet = "abcdefghijklmnopqrstuvwxyz0123456789 -_".split("")
 
-// function FlipLetter({ target, delay }) {
-//     const [letter, setLetter] = useState(" ")
-//     const [done, setDone] = useState(false)
-
-//     useEffect(() => {
-//         if (done) return
-//         let i = 0
-//         const interval = setInterval(() => {
-//             const random = alphabet[Math.floor(Math.random() * alphabet.length)]
-//             setLetter(random)
-//             i++
-//             if (i > 15) {
-//                 clearInterval(interval)
-//                 setLetter(target)
-//                 setDone(true)
-//             }
-//         }, delay / 10)
-
-//         return () => clearInterval(interval)
-//     }, [target, delay, done])
-
-//     return <span style={{ display: "inline-block" }}>{letter}</span>
-// }
-
-// function FlipTag({ text }) {
-//     return (
-//         <span className="tag-badge">
-//             {text.split("").map((char, i) => (
-//                 <FlipLetter key={i} target={char} delay={300 + i * 20} />
-//             ))}
-//         </span>
-//     )
-// }
 
 export default function PostDetail() {
     const { id } = useParams()
