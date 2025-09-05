@@ -15,7 +15,6 @@ const reviews = [
     { name: "Rosa Elia", text: "Todo muy bien excelente atención de la doctora...", date: "2024-12-06" },
     { name: "Alicia Saavedra", text: "Estoy muy agradecida por su calidez, atención y apoyo...", date: "2024-12-04" },
     { name: "Graciela", text: "Me transmitió confianza", date: "2024-12-03" },
-    { name: "Claudia Flores Miguel", text: "Profesionalismo y dedicación", date: "2024-11-26" },
 ];
 
 export default function ReviewsCarousel() {
@@ -26,12 +25,15 @@ export default function ReviewsCarousel() {
     const start = page * visible;
     const current = reviews.slice(start, start + visible);
 
-    const prev = () => setPage(p => Math.max(0, p - 1));
-    const next = () => setPage(p => Math.min(totalPages - 1, p + 1));
+    const prev = () =>
+        setPage(p => (p - 1 + totalPages) % totalPages); // 👈 loop circolare indietro
+
+    const next = () =>
+        setPage(p => (p + 1) % totalPages); // 👈 loop circolare avanti
 
     return (
         <div className="reviews-carousel">
-            <button className="carousel-btn" onClick={prev} disabled={page === 0} aria-label="Prev">
+            <button className="carousel-btn" onClick={prev} aria-label="Prev">
                 <FontAwesomeIcon icon={faChevronLeft} />
             </button>
 
@@ -41,7 +43,7 @@ export default function ReviewsCarousel() {
                 ))}
             </div>
 
-            <button className="carousel-btn" onClick={next} disabled={page === totalPages - 1} aria-label="Next">
+            <button className="carousel-btn" onClick={next} aria-label="Next">
                 <FontAwesomeIcon icon={faChevronRight} />
             </button>
         </div>

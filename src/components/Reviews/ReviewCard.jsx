@@ -23,7 +23,6 @@ export default function ReviewCard({ review }) {
         <div className="review-card">
             <h3 className="review-name">{review.name}</h3>
             <p className="review-text">{review.text}</p>
-            <span className="review-date">{review.date}</span>
             <div className="star">{stars}</div>
         </div>
     );

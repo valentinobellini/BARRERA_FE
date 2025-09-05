@@ -1,21 +1,24 @@
 .card-container {
+
     display: flex;
     justify-content: space-between;
     gap: 30px;
 }
 
 .review-card {
-    width: 400px;
-    height: 600px;
-    background-color: #a3e6cc;
-    text-align: center;
+    width: 300px;
+    height: 390px;
+    background-color: #ffffff;
     margin: 100px 0;
-    border-radius: 50px;
+    text-align: center;
+    border-radius: 16px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.14);
 
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: space-between;
+
+    padding: 1.5rem;
 }
 
 .review-card:hover {
@@ -25,23 +28,23 @@
 
 
 .review-name {
+    font-size: 1.5rem;
     color: #056341;
+    font-weight: 800;
+    margin-bottom: 32px;
 }
 
 .review-text {
-    padding: 50px;
+    font-size: 1.2rem;
+    font-weight: 100;
     color: #056341;
-    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 20px;
+    text-align: center;
     line-height: 1.8rem;
 }
 
-.review-date {
-    margin-bottom: 20px;
-}
 
-.star {
-    margin-top: 20px;
-}
 
 
 
@@ -96,11 +99,4 @@
 .carousel-btn:disabled {
     opacity: .45;
     cursor: not-allowed;
-}
-
-/* (facoltativo) card verticali e strette */
-.review-card {
-    flex: 0 0 300px;
-    /* larghezza fissa per avere esattamente 3 in fila */
-    height: 500px;
 }
