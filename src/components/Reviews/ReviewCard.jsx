@@ -14,7 +14,7 @@ export default function ReviewCard({ review }) {
             <FontAwesomeIcon
                 key={i}
                 icon={faStar}
-                style={{ color: '#FFD700' }}
+                style={{ color: '#FA9F47' }}
             />
         );
     }

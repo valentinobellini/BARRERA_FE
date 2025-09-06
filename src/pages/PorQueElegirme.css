@@ -1,0 +1,36 @@
+.porque-elegirme {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.porque-elegirme-title {
+    font-size: 3.1rem;
+    font-weight: 800;
+    color: #056341;
+    margin-bottom: 48px;
+}
+
+.porque-elegirme-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 150px;
+}
+
+.porque-elegirme-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 36px;
+    line-height: 1.6;
+    color: #056341;
+    font-size: 1.5rem;
+}
+
+.check-icon {
+    color: #056341;
+    width: 16px;
+    height: 16px;
+    flex: 0 0 24px;
+    font-size: 2rem;
+    margin-top: 12px;
+}

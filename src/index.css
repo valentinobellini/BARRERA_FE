@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
     display: none;
-}
+} */
 
 * {
     margin: 0;
@@ -15,6 +15,11 @@
 body {
     background-color: #ddf5ec;
 }
+
+
+
+
+
 
 header {
     width: 100%;
@@ -33,39 +38,17 @@ header {
 .header-wrapper {
     width: 80%;
     margin: auto;
-
 }
 
-footer {
-    width: 80%;
-    height: 20vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: auto;
-    line-height: 1.5rem;
-    color: #056341;
-
-    /* position: fixed;
-    bottom: 0; */
 
 
-    /* border: 2px dashed #bdeede; */
 
-}
 
-footer a {
-    text-decoration: none;
-    color: #056341;
-    font-weight: 600;
-    font-size: 1.2rem;
-}
 
-.footer-title {}
 
-.footer-bottom {
-    margin-top: 50px;
-}
+
+
+
 
 .homepage {
     width: 100%;
@@ -73,26 +56,18 @@ footer a {
     flex-direction: column;
     align-items: left;
     margin: auto;
-
-    /* border: 2px dashed #bdeede; */
-
 }
 
 .navbar-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-
-    /* border: 2px dashed #bdeede; */
 }
-
 
 
 .navbar {
     width: 100%;
     margin: auto;
-
 }
 
 .ecg-container {
@@ -105,9 +80,7 @@ footer a {
     justify-content: space-between;
     align-items: center;
     gap: 70px;
-
     list-style: none;
-
 }
 
 .navlist ul li a {
@@ -122,10 +95,6 @@ footer a {
     scale: 1.2;
 }
 
-/* .navbar a.active {
-    border-bottom: 2px solid #056341;
-    padding: 4px 8px;
-} */
 
 .services {
     background-color: #F4F4F4;
@@ -160,6 +129,7 @@ footer a {
 .references {
     width: 80%;
     margin: auto;
+    margin-bottom: 150px;
 }
 
 .references h2 {
@@ -172,14 +142,6 @@ footer a {
     margin-bottom: 56px;
 }
 
-
-
-
-
-
-
-
-
 .blog-page {
     width: 80%;
     display: flex;
@@ -189,7 +151,6 @@ footer a {
     color: #056341;
 }
 
-
 .admin-page {
     width: 80%;
     display: flex;
@@ -197,7 +158,72 @@ footer a {
     margin: auto;
     padding-top: 50px;
     color: #056341;
+}
+
+.cta {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.cta h2 {
+    font-size: 3.1rem;
+    font-weight: 800;
+    color: #056341;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.cta p {
+    font-size: 1.7rem;
+    font-weight: 400;
+    color: #056341;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.cta-button {
+    background-color: #E4572E;
+    width: 250px;
+    height: 54px;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    font-size: 1.2rem;
+    box-shadow: 7px 10px 40px 0 rgba(0, 0, 0, 0.25);
+    margin-bottom: 150px;
+}
 
 
-    /* border: 2px dashed #bdeede; */
+
+footer {
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    line-height: 1.5rem;
+    color: #056341;
+    background-color: #F4F4F4;
+    box-shadow: 0px 5px 25px -10px rgba(0, 0, 0, 0.25);
+
+}
+
+.footer-container {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.whatsapp-icon {
+    font-size: 3rem;
+    color: #056341;
 }

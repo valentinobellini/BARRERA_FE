@@ -1,0 +1,24 @@
+.contacto {
+    max-width: 80%;
+    margin: 0 auto 150px auto;
+    /* centrato + spazio sotto */
+}
+
+.contacto-title {
+    font-size: 3.1rem;
+    font-weight: 800;
+    color: #056341;
+    margin-bottom: 48px;
+}
+
+.contacto-text {
+    line-height: 2rem;
+    color: #056341;
+    font-size: 1.5rem;
+}
+
+.contacto-text a {
+    color: #056341;
+    font-weight: 600;
+    text-decoration: underline;
+}

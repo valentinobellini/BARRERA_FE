@@ -1,9 +1,15 @@
 import HeroSection from '../components/HeroSection/HeroSection'
 import ServiceCard from '../components/ServiceCard/ServiceCard'
-import ReviewCard from '../components/Reviews/ReviewCard'
 import ReviewsCarousel from '../components/Reviews/ReveiwsCarousel'
 
+import { motion, useInView } from 'framer-motion'
+import { useRef } from 'react'
+
 const HomePage = () => {
+
+    const ref = useRef(null)
+    const isInView = useInView(ref, { once: true, margin: "-100px" })
+
     return (
         <div className="homepage">
 
@@ -16,30 +22,35 @@ const HomePage = () => {
 
             {/* SERVICIOS */}
             <section className='services'>
-                <div className="services-wrapper">
+                <motion.div className="services-wrapper"
+                    initial={{ opacity: 0, y: 120 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px", amount: 0.2 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}>
+
                     <h2>Servicios de Medicina Interna Especializada en Monterrey</h2>
                     <div className="services-card-wrapper">
                         <ServiceCard
                             image='/img/diabetes.png'
                             title='Tratamiento Integral para Diabetes'
-                            text='La Dra. Ceja emplea un enfoque 360 ° para el manejo de la diabetes tipo 1, tipo 2 y gestacional. Combina ajuste farmacológico personalizado, educación diabetológica, monitoreo continuo de glucosa y estrategias de cambio de hábitos basadas en evidencia científica. Además, implementa tecnología de punta—como sensores CGM y apps de registro—que permite al paciente tomar decisiones informadas en tiempo real, minimizar picos hiperglucémicos y prevenir complicaciones micro- y macrovasculares. Su objetivo: lograr metas de HbA1c sostenibles y mejorar notablemente la calidad de vida.'
+                            text='La Dra. Ceja ofrece un enfoque completo para el manejo de la diabetes, enfocándose en prevenir complicaciones y mejorar la calidad de vida de sus pacientes mediante educación y monitoreo personalizado.'
                         ></ServiceCard>
 
                         <ServiceCard
                             image='/img/ipertension.png'
 
                             title='Control de Hipertensión Arterial'
-                            text='Mediante mapa ambulatorio de presión arterial (MAPA) de 24 h, análisis de riesgo cardiovascular y asesoría nutricional especializada, la Dra. Ceja crea planes de tratamiento que combinan farmacoterapia de última generación y modificación de estilo de vida. La doctora capacita al paciente en la autogestión de su salud, evitando crisis hipertensivas y disminuyendo la incidencia de infartos y accidentes cerebrovasculares. Se realizan ajustes terapéuticos en consultas presenciales y por teleconsulta segura, garantizando resultados medibles y duraderos.'
+                            text='Con una estrategia de diagnóstico y control de la presión arterial, la Dra. Ceja ayuda a prevenir enfermedades cardiovasculares y a mejorar la salud de sus pacientes.'
                         ></ServiceCard>
 
                         <ServiceCard
                             image='/img/general.png'
 
                             title='Medicina Interna General para Adultos'
-                            text='Desde infecciones agudas (neumonías, pielonefritis) hasta el manejo coordinado de enfermedades multisistémicas (insuficiencia cardiaca, EPOC, artritis reumatoide), la Dra. Ceja ofrece una visión integral que contempla aspectos clínicos, funcionales y psicosociales. Utiliza algoritmos diagnósticos validados y se apoya en un equipo interdisciplinario para brindar al adulto joven o mayor una atención continua y humanizada, orientada a la prevención de hospitalizaciones y a la mejora de la autonomía.'
+                            text='La Dra. Ceja aborda desde enfermedades agudas hasta el manejo de condiciones complejas, brindando un enfoque integral en la salud del adulto.'
                         ></ServiceCard>
                     </div>
-                </div>
+                </motion.div>
             </section>
 
 
@@ -47,13 +58,37 @@ const HomePage = () => {
 
             {/* REFERENCIAS */}
             <section className="references">
-                <div className="references-wrapper">
+                <motion.div className="references-wrapper"
+                    initial={{ opacity: 0, y: 120 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px", amount: 0.2 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}>
                     <h2>Lo que dicen mis pacientes</h2>
 
-                    {/* <ReviewCard /> */}
+                    {/* <ReviewCards /> */}
                     <ReviewsCarousel />
-                </div>
+                </motion.div>
             </section>
+
+
+            {/* CTA */}
+            <motion.section className="cta"
+
+                initial={{ opacity: 0, y: 120 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px", amount: 0.2 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}>
+                <h2 >¿Listo para priorizar tu salud?</h2>
+                <p >No esperes a que los síntomas avancen. La atención médica oportuna es clave para mantener tu bienestar. Agenda una consulta con la Dra. Ceja y recibe un enfoque integral, personalizado y basado en más de 30 años de experiencia.</p>
+
+                <button className="cta-button"
+                >
+                    Agenda tu cita
+                </button>
+
+            </motion.section>
+
+
 
         </div>
     )
