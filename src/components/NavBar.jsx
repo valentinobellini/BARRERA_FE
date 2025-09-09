@@ -22,9 +22,9 @@ export default function NavBar() {
                     <motion.ul
 
 
-                        initial={{ opacity: 0, x: 300 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 1, ease: 'easeOut', delay: 0.1, type: 'spring' }}
+                    // initial={{ opacity: 0, x: 300 }}
+                    // animate={{ opacity: 1, x: 0 }}
+                    // transition={{ duration: 1, ease: 'easeOut', delay: 0.1, type: 'spring' }}
                     >
 
 
