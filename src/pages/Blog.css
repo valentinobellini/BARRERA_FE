@@ -1,0 +1,27 @@
+.blog-page {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    padding-top: 50px;
+    color: #056341;
+}
+
+.blog-title {
+    font-size: 3.1rem;
+    font-weight: 800;
+    color: #056341;
+    margin-bottom: 36px;
+    text-align: center;
+}
+
+
+.blog-text {
+    text-align: center;
+
+    line-height: 2rem;
+    color: #056341;
+    font-size: 1.5rem;
+    margin-bottom: 48px;
+}
