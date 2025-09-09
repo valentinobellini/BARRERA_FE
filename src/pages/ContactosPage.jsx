@@ -1,5 +1,6 @@
 import './Contactos.css'
 import { motion } from 'framer-motion'
+import transition from '../components/transition'
 
 const ContactosPage = () => {
     return (
@@ -37,4 +38,4 @@ const ContactosPage = () => {
 
 }
 
-export default ContactosPage
+export default transition(ContactosPage)

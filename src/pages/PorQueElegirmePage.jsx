@@ -1,6 +1,7 @@
 import { FaCheck } from "react-icons/fa";
 import { motion } from 'framer-motion'
 import './PorQueElegirme.css'
+import transition from "../components/transition";
 
 const PorQueElegirmePage = () => {
     return (
@@ -48,4 +49,4 @@ const PorQueElegirmePage = () => {
     )
 }
 
-export default PorQueElegirmePage
+export default transition(PorQueElegirmePage);

@@ -1,6 +1,6 @@
 import './Trayectoria.css'
 import { motion } from 'framer-motion'
-
+import transition from '../components/transition'
 
 const TrayectoriaPage = () => {
     return (
@@ -35,4 +35,4 @@ const TrayectoriaPage = () => {
 
 }
 
-export default TrayectoriaPage
+export default transition(TrayectoriaPage)

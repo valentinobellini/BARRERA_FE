@@ -1,6 +1,8 @@
+import transition from "../components/transition"
+
 const ServiciosPage = () => {
 
 
 }
 
-export default ServiciosPage
+export default transition(ServiciosPage)
