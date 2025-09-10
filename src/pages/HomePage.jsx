@@ -1,6 +1,6 @@
 import HeroSection from '../components/HeroSection/HeroSection'
 import ServiceCard from '../components/ServiceCard/ServiceCard'
-import ReviewsCarousel from '../components/Reviews/ReveiwsCarousel'
+import ReviewsCarousel from '../components/Reviews/ReviewsCarousel'
 import transition from '../components/transition'
 
 import { motion, useInView } from 'framer-motion'

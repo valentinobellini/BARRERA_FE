@@ -6,8 +6,8 @@ import transition from "../components/transition";
 const PorQueElegirmePage = () => {
     return (
         <motion.section className="porque-elegirme"
-            initial={{ opacity: 0, x: -150 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 250 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: 'easeOut', delay: 0.1, type: 'spring' }}>
             <h2 className="porque-elegirme-title">
                 Por qué Elegir a la Dra. Lucrecia Ceja <br /> como tu Médico Internista en Monterrey

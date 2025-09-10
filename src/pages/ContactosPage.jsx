@@ -6,8 +6,8 @@ const ContactosPage = () => {
     return (
 
         <motion.section className="contacto"
-            initial={{ opacity: 0, x: -150 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 250 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: 'easeOut', delay: 0.1, type: 'spring' }}>
             <h2 className="contacto-title">
                 Contacta a la Dra. Lucrecia Ceja <br />
