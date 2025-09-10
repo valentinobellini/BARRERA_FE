@@ -30,7 +30,7 @@ header {
     flex-direction: column;
     justify-content: center;
     margin: auto;
-    margin-bottom: 150px;
+    margin-bottom: 100px;
     padding: 50px 0px;
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 5px 25px -10px rgba(0, 0, 0, 0.25);
@@ -85,7 +85,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 70px;
+    gap: 50px;
     list-style: none;
 }
 
@@ -93,8 +93,11 @@ header {
     text-decoration: none;
     color: #056341;
     font-weight: 800;
-    font-size: 18px;
+    font-size: 1.1rem;
     text-transform: uppercase;
+
+    /* evita l'andata a capo */
+    white-space: nowrap;
 }
 
 .nav-item:hover {
@@ -119,7 +122,7 @@ header {
     font-size: 3.1rem;
     font-weight: 800;
     color: #056341;
-    width: 800px;
+    width: 70%;
     margin: auto;
     text-align: center;
     margin-bottom: 56px;
@@ -129,6 +132,7 @@ header {
 .services-card-wrapper {
     display: flex;
     justify-content: space-between;
+    gap: 70px;
 }
 
 
@@ -142,7 +146,7 @@ header {
     font-size: 3.1rem;
     font-weight: 800;
     color: #056341;
-    width: 800px;
+    width: 70%;
     margin: auto;
     text-align: center;
     margin-bottom: 56px;
@@ -273,4 +277,136 @@ footer {
 
 .slide-out {
     transform-origin: bottom;
+}
+
+
+
+
+
+/* !!!!!!!! MEDIA QUERIES !!!!!!!! */
+
+/* 
+Breakpoint	Dispositivi/casi d'uso
+320px	Mobile portrait (schermi stretti)
+480px	Mobile landscape (smartphone orizzontali)
+768px	Tablet portrait (es. iPad)
+1024px	Tablet landscape / laptop piccoli
+1200px	Desktop medi/large
+1280px+	Widescreen / monitor grandi */
+
+
+
+
+
+
+
+
+@media (max-width: 1220px) {
+    .navlist ul {
+        gap: 40px;
+    }
+
+    .navlist ul li a {
+        font-size: 1rem;
+    }
+
+    .references h2 {
+        width: 80%;
+    }
+
+
+}
+
+
+
+
+
+
+@media (max-width: 1024px) {
+    .navlist ul {
+        gap: 28px;
+    }
+
+    .navlist ul li a {
+        font-size: 0.9rem;
+    }
+
+
+    .ecg-container {
+        width: 100px;
+        padding: 5px;
+    }
+
+    .services-wrapper h2,
+    .references h2,
+    .cta h2 {
+        font-size: 2.3rem;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+
+    .header-wrapper {
+        width: 90%;
+        margin: auto;
+    }
+
+
+
+
+
+    .services-wrapper,
+    .references,
+    .cta,
+    .footer-container,
+    .admin-page {
+
+        width: 90%;
+
+    }
+
+
+
+
+
+
+
+
+    .navlist ul {
+        gap: 28px;
+    }
+
+    .navlist ul li a {
+        font-size: 0.8rem;
+    }
+
+    .ecg-container {
+        width: 80px;
+        padding: 5px;
+    }
+}
+
+
+
+
+
+@media screen and (max-width: 480px) {
+
+    /* header {
+        display: none;
+    } */
+
+    /* .navlist ul {
+        display: none;
+    } */
+
 }

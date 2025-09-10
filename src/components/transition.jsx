@@ -18,18 +18,18 @@ const transition = (OgComponent) => {
         {/* Uscita: chiusura */}
         <motion.div
           className="slide-in"
-          initial={{ scaleY: 0 }}
+          initial={{ scaleY: 1 }}
           animate={{ scaleY: 0 }}
-          exit={{ scaleY: 1 }}
+          exit={{ scaleY: 0 }}
           transition={t}
         />
 
         {/* Entrata: apertura */}
         <motion.div
           className="slide-out"
-          initial={{ scaleY: 1 }}
+          initial={{ scaleY: 0 }}
           animate={{ scaleY: 0 }}
-          exit={{ scaleY: 0 }}
+          exit={{ scaleY: 1 }}
           transition={t}
         />
       </motion.div>

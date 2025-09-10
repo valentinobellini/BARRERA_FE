@@ -1,0 +1,61 @@
+/* Wrapper: flex con bottoni ai margini e cards centrate */
+.reviews-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    width: 100%;
+    margin: 60px 0;
+}
+
+/* Vista centrale con 3 card affiancate, centrate */
+.carousel-viewport {
+    display: flex;
+    justify-content: center;
+    /* centra il blocco delle 3 card */
+    gap: 50px;
+
+    flex: 1 1 auto;
+}
+
+/* Bottoni semplici */
+.carousel-btn {
+    border: 0;
+    color: #056341;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .2);
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+
+    flex-shrink: 0;
+}
+
+.carousel-btn:hover {
+    background: #ffffff;
+}
+
+.carousel-btn:disabled {
+    opacity: .45;
+    cursor: not-allowed;
+}
+
+
+
+
+/* 
+
+
+
+@media (max-width: 768px) {
+
+
+    .carousel-viewport {
+        justify-content: center;
+        gap: 8px;
+    }
+
+
+} */

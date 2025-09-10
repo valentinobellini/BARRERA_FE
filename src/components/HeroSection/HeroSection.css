@@ -2,7 +2,7 @@
     width: 80%;
     display: flex;
     flex-direction: column;
-    align-items: start;
+    /* align-items: start; */
     margin: auto;
 
 }
@@ -11,7 +11,7 @@
     font-size: 4rem;
     font-weight: 800;
     color: #056341;
-    text-align: center;
+    text-align: left;
     margin-bottom: 24px;
 }
 
@@ -19,7 +19,7 @@
     font-size: 3.1rem;
     font-weight: 300;
     color: #056341;
-    text-align: center;
+    text-align: left;
     margin-bottom: 32px;
 }
 
@@ -43,4 +43,17 @@
     border: none;
     font-size: 1.2rem;
     box-shadow: 7px 10px 40px 0 rgba(0, 0, 0, 0.25);
+}
+
+
+@media screen and (max-width: 1024px) {
+
+    .hero-title {
+        font-size: 3.1rem;
+    }
+
+    .hero-head {
+        font-size: 2.3rem;
+    }
+
 }

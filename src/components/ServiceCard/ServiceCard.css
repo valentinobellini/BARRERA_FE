@@ -24,8 +24,6 @@
     color: #056341;
     text-align: center;
     margin-bottom: 20px;
-    text-align: center;
-
 }
 
 .service-card-text {
@@ -34,6 +32,47 @@
     color: #056341;
     text-align: center;
     margin-bottom: 20px;
-    text-align: center;
     line-height: 2.1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1024px) {
+
+
+    .service-card-title {
+        font-size: 1.6rem;
+
+    }
+
+    .service-card-text {
+        font-size: 1.2rem;
+
+    }
+
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+
+    .service-card-title {
+        font-size: 1.4rem;
+
+    }
+
+    .service-card-text {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+
+    }
 }
