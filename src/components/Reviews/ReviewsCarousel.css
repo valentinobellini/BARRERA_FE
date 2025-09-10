@@ -12,10 +12,12 @@
 .carousel-viewport {
     display: flex;
     justify-content: center;
-    /* centra il blocco delle 3 card */
     gap: 50px;
-
-    flex: 1 1 auto;
+    flex: 0 0 auto;
+    /* <— invece di flex: 1 1 auto */
+    width: max-content;
+    /* si adatta alla somma card + gap */
+    min-width: 0;
 }
 
 /* Bottoni semplici */

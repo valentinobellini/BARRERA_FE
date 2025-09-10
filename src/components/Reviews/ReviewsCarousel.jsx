@@ -5,6 +5,8 @@ import './ReviewsCarousel.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import ReviewCard from './ReviewCard';
+import { motion } from 'framer-motion'
+
 
 const reviews = [
     { name: "Juan Camilo Maldonado O.", text: "Muy profesional en su evaluación de los análisis presentados. Excelentes recomendaciones para lograr mejores resultados en el tratamiento. Trato muy cordial.", date: "2025-01-16" },
@@ -81,11 +83,15 @@ export default function ReviewsCarousel() {
                 <FontAwesomeIcon icon={faChevronLeft} />
             </button>
 
-            <div className="carousel-viewport">
+            <motion.div className="carousel-viewport"
+                initial={{ opacity: 0, x: -250 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                // viewport={{ once: true, margin: "-50px", amount: 0.2 }}
+                transition={{ duration: 1.2, ease: 'easeOut', delay: 0.5, type: 'spring' }}>
                 {current.map((r, i) => (
                     <ReviewCard key={`${r.name}-${r.date}-${i}`} review={r} />
                 ))}
-            </div>
+            </motion.div>
 
             <button className="carousel-btn" onClick={next} aria-label="Next">
                 <FontAwesomeIcon icon={faChevronRight} />

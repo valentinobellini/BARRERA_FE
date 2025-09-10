@@ -1,33 +1,36 @@
 /* Layout principale */
 .dashboard {
     display: flex;
-    min-height: 100vh;
     font-family: 'Montserrat', sans-serif;
+    margin-bottom: 150px;
 }
 
 .sidebar,
 .dashboard-header,
 .dashboard-list {
-    border: 1px solid #056341;
+
     padding: 20px;
-    background-color: #ddf5ec;
+    background-color: #F4F4F4;
     border-radius: 8px;
+    box-shadow: 7px 10px 15px 0 rgba(0, 0, 0, 0.25);
+
+
 }
 
 /* Sidebar a sinistra */
 .sidebar {
-    width: 240px;
+
     height: 300px;
-    padding: 20px 20px 20px 20px;
+    padding: 20px;
     margin: 0px 20px 0px 0px;
 
 }
 
 .sidebar h2 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 800;
     margin-bottom: 50px;
-
-
+    text-transform: uppercase
 }
 
 .sidebar ul {
@@ -40,17 +43,13 @@
     padding: 10px 0;
     cursor: pointer;
     font-weight: 500;
-    color: #111827;
+    color: #056341;
 }
 
-.sidebar ul li:hover {
-    background-color: rgb(232, 248, 243);
-}
+
 
 /* Contenuto principale */
-.main-content {
-    flex: 1;
-}
+.main-content {}
 
 /* Header con statistiche */
 .dashboard-header {
@@ -79,7 +78,7 @@
 }
 
 .create-post-btn {
-    background-color: #10b981;
+    background-color: #E4572E;
     color: white;
     font-size: 1rem;
     padding: 10px 15px;
@@ -91,14 +90,14 @@
 }
 
 .create-post-btn:hover {
-    background-color: #059669;
+    background-color: #E4572E;
 }
 
 /* Lista post/tags */
 .dashboard-list h3 {
     margin-bottom: 15px;
     font-size: 1.25rem;
-    color: #1f2937;
+    color: #056341;
 }
 
 .list-row {
@@ -106,7 +105,6 @@
     justify-content: space-between;
     align-items: center;
     padding: 12px 20px;
-
 }
 
 .list-row:hover,
@@ -118,10 +116,67 @@
 .actions svg {
     margin-left: 12px;
     cursor: pointer;
-    color: #6b7280;
+    color: #056341;
     transition: color 0.2s;
 }
 
 .actions svg:hover {
-    color: #111827;
+    color: #E4572E;
+}
+
+
+
+
+
+/* form style */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1220px) {
+
+    .dashboard-header {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+
+
+    .stat-box {
+        width: 150px;
+        display: flex;
+        flex-direction: column;
+        font-weight: 500;
+        text-align: center;
+    }
+
+
+    .list-row {
+        padding: 12px 10px;
+    }
+}
+
+
+
+
+
+@media (max-width: 768px) {
+
+    .sidebar {
+        display: none;
+
+    }
 }

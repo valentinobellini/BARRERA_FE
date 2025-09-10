@@ -4,41 +4,29 @@ import { motion } from 'framer-motion'
 
 const HeroSection = () => {
     return (
-        <div className="hero">
-            <motion.h3 className="hero-title"
-                initial={{ opacity: 0, x: -150 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 1, ease: 'easeOut', delay: 0.1, type: 'spring' }}>
-
+        <motion.div className="hero"
+            initial={{ opacity: 0, y: 250 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: 'easeOut', delay: 0.1, type: 'spring' }}>
+            <h3 className="hero-title"
+            >
                 Dra. Lucrecia Ceja Barrera
-            </motion.h3>
-            <motion.p className="hero-head"
-                initial={{ opacity: 0, x: -150 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 1, ease: 'easeOut', delay: 0.1, type: 'spring' }}>Médico Internista en Monterrey,<br />
+            </h3>
+            <p className="hero-head">Médico Internista en Monterrey,<br />
                 Especialista en Medicina Interna
-            </motion.p>
+            </p>
 
             <div className="hero-image"><img alt="" /></div>
 
-            <motion.p className="hero-text"
-                initial={{ opacity: 0, x: -150 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 1, ease: 'easeOut', delay: 0.1, type: 'spring' }}>
+            <p className="hero-text">
                 La Dra. Lucrecia Ceja Barrera es una especialista en Medicina Interna con más de 30 años de experiencia en Monterrey, N.L. Brindando atención integral, la Dra. Ceja se enfoca en el tratamiento de enfermedades crónicas como diabetes e hipertensión, con un compromiso hacia el bienestar y la calidad de vida de sus pacientes.
-            </motion.p>
+            </p>
 
-
-            <motion.button
-                className="hero-button"
-                initial={{ opacity: 0, x: -150 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 1, ease: 'easeOut', delay: 0.1, type: 'spring' }}
-            >
+            <button
+                className="hero-button">
                 Agenda tu cita
-
-            </motion.button>
-        </div>
+            </button>
+        </motion.div>
     )
 }
 

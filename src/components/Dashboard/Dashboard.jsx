@@ -83,7 +83,7 @@ export default function Dashboard() {
         return <span style={{ display: 'inline-block' }}>{digit}</span>
     }
 
-    // ---- Helpers: apri/chiudi form
+
     const closeForm = () => {
         setShowForm(false)
         setFormMode(null)
@@ -99,7 +99,7 @@ export default function Dashboard() {
         closeForm()
     }
 
-    // ---- POST: create / edit
+
     const openCreatePost = () => {
         setFormMode('post')
         setEditingPost(null)
@@ -159,7 +159,7 @@ export default function Dashboard() {
         if (ok) deletePost(postId)
     }
 
-    // ---- TAG: create / edit
+
     const openCreateTag = () => {
         setFormMode('tag')
         setEditingTag(null)
@@ -222,7 +222,9 @@ export default function Dashboard() {
                 transition={{ duration: 1, ease: 'easeOut', type: 'spring', stiffness: 123, damping: 18, bounce: 0.3, delay: 0.1 }}
             >
                 <div className="dashboard-header">
-                    <div className="stat-box">
+
+
+                    <div onClick={() => handleTabChange('posts')} className="stat-box">
                         <div className="stat-box-num">
                             {animateStats
                                 ? animatedCounts.published?.toString().split('').map((c, i) => (
@@ -233,7 +235,9 @@ export default function Dashboard() {
                         <div>N. Publicados</div>
                     </div>
 
-                    <div className="stat-box">
+
+
+                    <div onClick={() => handleTabChange('drafts')} className="stat-box">
                         <div className="stat-box-num">
                             {animateStats
                                 ? animatedCounts.drafts?.toString().split('').map((c, i) => (
@@ -244,7 +248,9 @@ export default function Dashboard() {
                         <div>N. Borradores</div>
                     </div>
 
-                    <div className="stat-box">
+
+
+                    <div onClick={() => handleTabChange('tags')} className="stat-box">
                         <div className="stat-box-num">
                             {animateStats
                                 ? animatedCounts.tags?.toString().split('').map((c, i) => (
@@ -256,9 +262,9 @@ export default function Dashboard() {
                     </div>
 
                     {activeTab !== 'tags' ? (
-                        <button className="create-post-btn" onClick={openCreatePost}><FaPlus /> Crear nuevo post</button>
+                        <button className="create-post-btn" onClick={openCreatePost}>Crear nuevo post</button>
                     ) : (
-                        <button className="create-post-btn" onClick={openCreateTag}><FaPlus /> Crear etiqueta</button>
+                        <button className="create-post-btn" onClick={openCreateTag}>Crear etiqueta</button>
                     )}
                 </div>
 
