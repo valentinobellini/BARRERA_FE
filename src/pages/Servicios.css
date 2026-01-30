@@ -1,58 +1,52 @@
-.contacto {
+.servicios {
     max-width: 80%;
-    margin: 0 auto 150px auto;
-    /* centrato + spazio sotto */
+    margin: auto;
 }
 
-.contacto-title {
+.servicios-title {
     font-size: 3.1rem;
     font-weight: 800;
     color: #056341;
     margin-bottom: 48px;
 }
 
-.contacto-text {
-    line-height: 2rem;
+.servicios-text {
+    line-height: 2.6rem;
     color: #056341;
     font-size: 1.5rem;
-    margin-bottom: 30px;
-
+    margin-bottom: 150px;
 }
 
-
-
-
-.contacto-text a {
+.servicios-subtitle {
+    font-size: 2rem;
+    font-weight: 700;
     color: #056341;
-    font-weight: 600;
-    text-decoration: underline;
+    margin: 80px 0 24px;
 }
 
 
+/* Responsive */
+@media (max-width: 1024px) {
+    .servicios-title {
+        line-height: 3.1rem;
+        font-size: 2.5rem;
+    }
+}
 
 @media screen and (max-width: 480px) {
-
-
-
-    .contacto-title {
-        font-size: 2.3rem;
+    .servicios-title {
+        font-size: 1.8rem;
         font-weight: 800;
         color: #056341;
         margin-bottom: 48px;
-
         text-align: center;
-
     }
 
-    .contacto-text {
+    .servicios-text {
         line-height: 2rem;
         color: #056341;
         font-size: 1.5rem;
+        margin-bottom: 150px;
         text-align: center;
-
     }
-
-
-
-
 }

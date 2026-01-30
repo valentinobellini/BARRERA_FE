@@ -198,6 +198,8 @@ header {
     border: none;
     box-shadow: 7px 10px 40px 0 rgba(0, 0, 0, 0.25);
     margin-bottom: 150px;
+    margin-top: 50px;
+
 
     color: white;
     text-decoration: none;
@@ -325,6 +327,8 @@ Breakpoint	Dispositivi/casi d'uso
 
 
 @media (max-width: 1024px) {
+
+
 
     .header-wrapper,
     .services-wrapper,

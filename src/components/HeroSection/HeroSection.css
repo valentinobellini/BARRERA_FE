@@ -18,18 +18,46 @@
     font-weight: 300;
     color: #056341;
     text-align: left;
-    margin-bottom: 32px;
+    margin-bottom: 74px;
+}
+
+
+
+.hero-text-wrap {
+    width: 100%;
 }
 
 .hero-text {
-    width: 588px;
+    /* width: 588px; */
 
     font-size: 1.5rem;
     font-weight: 400;
     color: #056341;
     text-align: left;
     line-height: 2rem;
-    margin-bottom: 48px;
+    margin-bottom: 24px;
+}
+
+
+
+.hero-wrap {
+    display: flex;
+    justify-content: flex-start;
+    gap: 50px;
+}
+
+.hero-image {
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+    border: 1px solid green;
+}
+
+.hero-image img {
+    width: 90%;
+    margin: 0 auto;
+
+    filter: grayscale(100%) contrast(1.05) brightness(0.95);
 }
 
 /* .cta-button {

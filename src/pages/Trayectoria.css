@@ -18,18 +18,29 @@
     margin-bottom: 24px;
 }
 
+.trayectoria-text:nth-of-type(3) {
+    margin-top: 80px;
+}
+
 .trayectoria-text:last-child {
     margin-bottom: 150px;
 }
 
+@media (max-width: 1024px) {
 
+    .trayectoria-title {
+        line-height: 3.1rem;
+        font-size: 2.5rem;
+
+    }
+}
 
 
 @media screen and (max-width: 480px) {
 
 
     .trayectoria-title {
-        font-size: 2.3rem;
+        font-size: 1.8rem;
         font-weight: 800;
         color: #056341;
         margin-bottom: 48px;
