@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence } from "framer-motion";
+import { useEffect } from "react";
 
 // Layout
 import MainLayout from './layouts/MainLayout'
@@ -21,11 +22,27 @@ import AdminScreen from "./pages/AdminScreen";
 import LoginPage from "./pages/LoginPage";
 import ProtectedRoute from "./components/Auth/ProtectedRoute";
 
+import ScrollToTop from "./components/ScrollToTop";
+
 
 function AnimatedRoutes() {
   const location = useLocation();
+
+
+
+  useEffect(() => {
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+  }, []);
+
+
+
+
+
   return (
     <AnimatePresence mode="wait" >
+      <ScrollToTop />
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<HomePage />} />

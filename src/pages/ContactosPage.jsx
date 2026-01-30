@@ -38,7 +38,7 @@ const ContactosPage = () => {
 
 
             <h2 class="contacto-title">
-                Contacta a la Dra. Lucrecia Ceja – Agenda tu Consulta de Medicina Interna en Monterrey
+                Contacta a la Dra. Lucrecia Ceja <br /> Agenda tu Consulta de Medicina Interna en Monterrey
             </h2>
 
             <p class="contacto-text">
@@ -49,13 +49,24 @@ const ContactosPage = () => {
             </p>
             <p class="contacto-text">
                 También puedes solicitar una <strong>videoconsulta</strong> si resides fuera del
-                área metropolitana. La Dra. Ceja y su equipo te ofrecerán un servicio ágil, seguro
+                área metropolitana. <br /> La Dra. Ceja y su equipo te ofrecerán un servicio ágil, seguro
                 y confidencial, y seguimiento continuo para que alcances tus objetivos de salud sin
                 barreras. ¡Recupera tu bienestar con la experiencia de una internista líder en
                 Monterrey!
             </p>
 
-
+            <button
+                className="cta-button"
+                onClick={() =>
+                    window.open(
+                        "https://wa.me/393286886891?text=Ciao%2C%20vorrei%20più%20info",
+                        "_blank",
+                        "noopener,noreferrer"
+                    )
+                }
+            >
+                Agenda tu cita
+            </button>
 
         </motion.section>
 

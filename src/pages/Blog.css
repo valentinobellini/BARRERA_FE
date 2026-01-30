@@ -11,17 +11,16 @@
     font-size: 3.1rem;
     font-weight: 800;
     color: #056341;
-    margin-bottom: 36px;
+    margin-bottom: 48px;
     text-align: center;
 }
 
 
 .blog-text {
     text-align: center;
-
+    font-size: 1.5rem;
     line-height: 2rem;
     color: #056341;
-    font-size: 1.5rem;
     margin-bottom: 48px;
 }
 
