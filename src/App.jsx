@@ -18,6 +18,9 @@ import BlogPage from './pages/BlogPage'
 import PostDetail from './components/BlogSection/PostDetail'
 import AdminScreen from "./pages/AdminScreen";
 
+import LoginPage from "./pages/LoginPage";
+import ProtectedRoute from "./components/Auth/ProtectedRoute";
+
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -32,7 +35,24 @@ function AnimatedRoutes() {
           <Route path="contactos" element={<ContactosPage />} />
           <Route path="blog" element={<BlogPage />} />
           <Route path="blog/:id/:slug" element={<PostDetail />} />
-          <Route path="admin" element={<AdminScreen />} />
+
+
+          {/* Login libero */}
+          <Route path="login" element={<LoginPage />} />
+
+
+          {/* Admin protetta */}
+          <Route
+            path="admin"
+            element={
+              <ProtectedRoute>
+                <AdminScreen />
+              </ProtectedRoute>
+            }
+          />
+
+
+
           <Route path="*" element={<h1>Página no encontrada</h1>} />
         </Route>
       </Routes>

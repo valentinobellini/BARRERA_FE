@@ -18,11 +18,12 @@ const SearchBar = () => {
                     value={searchQuery}
                     onChange={(e) => searchPosts(e.target.value)}
                     className="search-input"
-                />
 
+                />
+                <p className='bar-reset'
+                    onClick={handleReset}>x</p>
             </div>
-            <p className='bar-reset'
-                onClick={handleReset}>x</p>
+
         </>
     )
 }

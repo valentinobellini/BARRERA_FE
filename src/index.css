@@ -10,7 +10,7 @@
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 
-    cursor: cell;
+    /* cursor: cell; */
 
 }
 
@@ -37,7 +37,7 @@ header {
     position: sticky;
     top: 0;
     left: 0;
-    z-index: 5;
+    z-index: 500;
 
 }
 
@@ -194,13 +194,18 @@ header {
     background-color: #E4572E;
     width: 250px;
     height: 54px;
-    color: white;
     border-radius: 8px;
     border: none;
-    font-size: 1.2rem;
     box-shadow: 7px 10px 40px 0 rgba(0, 0, 0, 0.25);
     margin-bottom: 150px;
+
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    cursor: pointer;
 }
+
+.cta-button {}
 
 
 
@@ -368,6 +373,10 @@ Breakpoint	Dispositivi/casi d'uso
 
 @media (max-width: 768px) {
 
+    .navlist ul {
+        display: none;
+    }
+
     .header-wrapper {
         width: 90%;
         margin: auto;
@@ -403,7 +412,7 @@ Breakpoint	Dispositivi/casi d'uso
     }
 
     .ecg-container {
-        width: 80px;
+        width: 110px;
         padding: 5px;
     }
 }
@@ -414,12 +423,29 @@ Breakpoint	Dispositivi/casi d'uso
 
 @media screen and (max-width: 480px) {
 
-    /* header {
-        display: none;
-    } */
 
-    /* .navlist ul {
-        display: none;
-    } */
 
+    .services-card-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        /* gap: 70px; */
+    }
+
+
+    .cta {
+        width: 80%;
+    }
+
+    .services-wrapper h2,
+    .references h2,
+    .cta h2 {
+        font-size: 2rem;
+    }
+
+
+    .space {
+        display: none;
+    }
 }

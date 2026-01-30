@@ -17,7 +17,11 @@ const ServiceCard = ({ image, title, text }) => {
             transition={{ duration: 0.8, ease: "easeOut" }}
 
             whileHover={{
-                scale: 1.03,
+                scale: 1.02,
+                transition: {
+                    duration: 0.15,
+                    ease: [0.22, 1, 0.36, 1] // ease "cinematografica"
+                }
             }}>
 
             <div className="service-img" ><img src={image} alt="" /></div>

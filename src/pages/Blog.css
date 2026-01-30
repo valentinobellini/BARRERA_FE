@@ -24,3 +24,19 @@
     font-size: 1.5rem;
     margin-bottom: 48px;
 }
+
+
+
+@media screen and (max-width: 480px) {
+
+
+    .blog-title {
+        font-size: 2.3rem;
+        font-weight: 800;
+        color: #056341;
+        margin-bottom: 36px;
+        text-align: center;
+    }
+
+
+}

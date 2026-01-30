@@ -8,10 +8,10 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 250 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: 'easeOut', delay: 0.1, type: 'spring' }}>
-            <h3 className="hero-title"
+            <h1 className="hero-title"
             >
                 Dra. Lucrecia Ceja Barrera
-            </h3>
+            </h1>
             <p className="hero-head">Médico Internista en Monterrey,<br />
                 Especialista en Medicina Interna
             </p>
@@ -23,7 +23,15 @@ const HeroSection = () => {
             </p>
 
             <button
-                className="hero-button">
+                className="cta-button"
+                onClick={() =>
+                    window.open(
+                        "https://wa.me/393286886891?text=Ciao%2C%20vorrei%20più%20info",
+                        "_blank",
+                        "noopener,noreferrer"
+                    )
+                }
+            >
                 Agenda tu cita
             </button>
         </motion.div>

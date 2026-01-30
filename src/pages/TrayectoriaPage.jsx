@@ -10,7 +10,7 @@ const TrayectoriaPage = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, ease: 'easeOut', delay: 0.1, type: 'spring' }}>
                 <h2 className="trayectoria-title">
-                    Trayectoria Profesional de la Dra. <br />
+                    Trayectoria Profesional de la Dra. <br className='space' />
                     Lucrecia Ceja en Medicina Interna
                 </h2>
 

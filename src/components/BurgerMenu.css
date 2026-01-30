@@ -1,0 +1,128 @@
+/* src/components/Nav/BurgerMenu.css */
+:root {
+    --brand: #056341;
+    --panel-w: 680px;
+    /* larghezza pannello */
+    --panel-pad: 16px 20px;
+}
+
+/* ====== Bottone hamburger (header) ====== */
+.bm-burger {
+    display: none;
+    /* desktop hidden, vedi media query sotto */
+    width: 40px;
+    height: 40px;
+    border: 0;
+    border-radius: 8px;
+    background: #F4F4F4;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, .12);
+    padding: 6px;
+    cursor: pointer;
+
+
+    user-select: none;
+    -webkit-user-select: none;
+    /* per Safari */
+    -ms-user-select: none;
+    /* per vecchi Edge/IE */
+}
+
+.bm-burger-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+.bm-burger .bm-bar {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: #056341;
+    border-radius: 2px;
+    margin: 3px 0;
+}
+
+/* Mostra l’hamburger su mobile */
+@media (max-width: 768px) {
+    .bm-burger {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* ====== Overlay ====== */
+.bm-overlay {
+    width: 100%;
+    position: fixed;
+    inset: 0;
+    top: 130px;
+    z-index: 100;
+}
+
+.bm-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(26, 26, 26, 0.6);
+}
+
+/* ====== Pannello ====== */
+.bm-panel {
+    position: relative;
+    width: 100vw;
+    background: #F4F4F4;
+    /* border: 2px solid #056341; */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+    overflow: hidden;
+    border-top: 2px solid #056341;
+    /* accento che “esce” dall’header */
+}
+
+/* header del pannello */
+.bm-panel-header {
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--panel-pad);
+    border-bottom: 2px solid #056341;
+
+}
+
+.bm-close {
+    width: 40px;
+    height: 40px;
+    border: 0;
+    background: transparent;
+    color: #056341;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 1;
+    cursor: pointer;
+}
+
+/* lista voci */
+.bm-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+.bm-list li+li {
+    border-top: 2px solid #056341;
+    width: 100%;
+}
+
+.bm-link {
+    display: block;
+    padding: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--brand);
+    text-decoration: none;
+
+}

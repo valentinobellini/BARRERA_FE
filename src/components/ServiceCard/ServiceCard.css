@@ -76,3 +76,17 @@
 
     }
 }
+
+
+@media screen and (max-width: 480px) {
+
+    .service-card-title {
+        font-size: 1.6rem;
+
+    }
+
+    .service-card-text {
+        font-size: 1.2rem;
+
+    }
+}

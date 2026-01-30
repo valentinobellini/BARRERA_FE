@@ -22,3 +22,31 @@
     font-weight: 600;
     text-decoration: underline;
 }
+
+
+
+@media screen and (max-width: 480px) {
+
+
+
+    .contacto-title {
+        font-size: 2.3rem;
+        font-weight: 800;
+        color: #056341;
+        margin-bottom: 48px;
+
+        text-align: center;
+
+    }
+
+    .contacto-text {
+        line-height: 2rem;
+        color: #056341;
+        font-size: 1.5rem;
+        text-align: center;
+
+    }
+
+
+
+}

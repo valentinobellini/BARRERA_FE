@@ -82,7 +82,15 @@ const HomePage = () => {
                 <h2 >¿Listo para priorizar tu salud?</h2>
                 <p >No esperes a que los síntomas avancen. La atención médica oportuna es clave para mantener tu bienestar. Agenda una consulta con la Dra. Ceja y recibe un enfoque integral, personalizado y basado en más de 30 años de experiencia.</p>
 
-                <button className="cta-button"
+                <button
+                    className="cta-button"
+                    onClick={() =>
+                        window.open(
+                            "https://wa.me/393286886891?text=Ciao%2C%20vorrei%20più%20info",
+                            "_blank",
+                            "noopener,noreferrer"
+                        )
+                    }
                 >
                     Agenda tu cita
                 </button>

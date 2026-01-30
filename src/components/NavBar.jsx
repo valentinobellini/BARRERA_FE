@@ -3,6 +3,9 @@ import { motion } from 'framer-motion'
 import Lottie from "lottie-react";
 import ecg from "../assets/animations/ecg.json";
 
+import BurgerMenu from "./BurgerMenu";
+import "./BurgerMenu.css";
+
 export default function NavBar() {
     return (
         <>
@@ -50,7 +53,14 @@ export default function NavBar() {
                             <NavLink to="/contactos">Contacto</NavLink>
                         </li>
                     </motion.ul>
+
+
+
+                    {/* burger menu (visibile da CSS sotto 768px) */}
                 </nav>
+                <BurgerMenu
+
+                />
             </div>
         </>
     )

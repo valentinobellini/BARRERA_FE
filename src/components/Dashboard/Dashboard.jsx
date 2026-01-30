@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { useAdminPostContext } from '../../contexts/AdminPostContext'
 import { useAdminTagContext } from '../../contexts/AdminTagContext'
-import { FaEdit, FaTrash, FaPlus } from 'react-icons/fa'
+import { FaEdit, FaTrash, FaRegFileAlt, FaFileSignature, FaTags } from 'react-icons/fa'
 import './Dashboard.css'
 import './DashboardForm.css'
 import { motion, useInView } from 'framer-motion'
@@ -199,6 +199,18 @@ export default function Dashboard() {
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.8, ease: 'easeOut' }}
         >
+
+            {/* Title visibile solo su mobile */}
+            <motion.div
+                initial={{ opacity: 0, y: 120 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px", amount: 0.2 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}>
+
+                <h2 className='dashboard-title'>Panel de administración</h2>
+            </motion.div>
+
+
             {/* Sidebar */}
             <motion.aside
                 className="sidebar"
@@ -208,9 +220,18 @@ export default function Dashboard() {
             >
                 <h2>Panel de administración</h2>
                 <ul>
-                    <li onClick={() => handleTabChange('posts')}>Publicados</li>
-                    <li onClick={() => handleTabChange('drafts')}>Borradores</li>
-                    <li onClick={() => handleTabChange('tags')}>Etiquetas</li>
+
+                    <li onClick={() => handleTabChange('posts')}>
+                        <FaRegFileAlt className='sidebar-icon' />
+                        Publicados</li>
+
+                    <li onClick={() => handleTabChange('drafts')}>
+                        <FaFileSignature className='sidebar-icon' />
+                        Borradores</li>
+
+                    <li onClick={() => handleTabChange('tags')}>
+                        <FaTags className='sidebar-icon' />
+                        Etiquetas</li>
                 </ul>
             </motion.aside>
 
@@ -262,7 +283,7 @@ export default function Dashboard() {
                     </div>
 
                     {activeTab !== 'tags' ? (
-                        <button className="create-post-btn" onClick={openCreatePost}>Crear nuevo post</button>
+                        <button className="create-post-btn" onClick={openCreatePost}>Crear post</button>
                     ) : (
                         <button className="create-post-btn" onClick={openCreateTag}>Crear etiqueta</button>
                     )}

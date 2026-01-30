@@ -72,3 +72,12 @@
     display: flex;
     gap: 7px;
 }
+
+
+
+
+@media screen and (max-width: 480px) {
+    .post-card {
+        width: 400px;
+    }
+}
