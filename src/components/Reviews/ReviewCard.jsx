@@ -20,10 +20,28 @@ export default function ReviewCard({ review }) {
     }
 
     return (
+        // <div className="review-card">
+        //     <img className='doctoralia-logo' src="/img/doctoralia.png" alt="" />
+
+        //     <div className="review-wrap">
+        //         <h3 className="review-name">{review.name}</h3>
+        //         <p className="review-text">{review.text}</p>
+        //         <div className="star">{stars}</div>
+        //     </div>
+        // </div>
+
+
+
         <div className="review-card">
-            <h3 className="review-name">{review.name}</h3>
-            <p className="review-text">{review.text}</p>
-            <div className="star">{stars}</div>
+            <img className="doctoralia-logo" src="/img/doctoralia.png" alt="" />
+
+            <div className="review-wrap">
+                <h3 className="review-name">{review.name}</h3>
+                <p className="review-text">{review.text}</p>
+            </div>
+
+            <div className="review-stars">{stars}</div>
         </div>
+
     );
 }

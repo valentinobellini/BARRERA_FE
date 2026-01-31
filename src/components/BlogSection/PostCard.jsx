@@ -54,36 +54,21 @@ export default function PostCard({ id, image_url, published_at, reading_time, ti
                 <p className="post-card-text">{headline}</p>
 
                 <div className="post-card-tags">
-
                     {Array.isArray(tags) && tags.length > 0 && (
-                        <>
-
-                            {tags.map((tag, index) => (
-                                <span
-                                    key={index}
-                                    onClick={(e) => {
-                                        e.stopPropagation()
-                                        searchPosts(tag)
-                                    }}
+                        <div className="tag-wrapper">
+                            {tags.map((tag, i) => (
+                                <div
+                                    key={`${tag}-${i}`}
+                                    className="tag"
+                                    onClick={(e) => handleTagClick(e, tag)}
                                 >
-                                    <div className="tag-wrapper">
-
-                                        {tags.map((tag, i) => {
-                                            return (
-                                                <div key={i}
-                                                    className='tag'
-                                                    onClick={(e) => handleTagClick(e, tag)}>
-                                                    {tag}
-                                                </div>
-                                            )
-                                        })}
-                                    </div>
-                                </span>
+                                    {tag}
+                                </div>
                             ))}
-                        </>
+                        </div>
                     )}
-
                 </div>
+
             </div>
         </article>
     );

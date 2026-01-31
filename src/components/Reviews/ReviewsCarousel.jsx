@@ -9,7 +9,7 @@ import { motion } from 'framer-motion'
 
 
 const reviews = [
-    { name: "Juan Camilo Maldonado O.", text: "Muy profesional en su evaluación de los análisis presentados. Excelentes recomendaciones para lograr mejores resultados en el tratamiento. Trato muy cordial.", date: "2025-01-16" },
+    { name: "Juan Camilo", text: "Muy profesional en su evaluación de los análisis presentados. Excelentes recomendaciones para lograr mejores resultados en el tratamiento. Trato muy cordial.", date: "2025-01-16" },
     { name: "Daniel", text: "Excelente trato, explicaciones precisas, puntualidad", date: "2024-12-20" },
     { name: "Karla Lemus", text: "Excelente atención, se interesa genuinamente en el paciente, genera confianza y te motiva a seguir con el tratamiento.", date: "2024-12-20" },
     { name: "Lidia Pruneda", text: "Estoy muy satisfecha con la atención que me brinda la Doctora. Es clara en sus indicaciones y muestra empatía mientras consulta. Ya he tenido 3 consultas de seguimiento.", date: "2024-12-12" },

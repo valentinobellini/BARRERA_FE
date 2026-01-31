@@ -29,6 +29,59 @@
 }
 
 
+.contact-button-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 100px 0;
+}
+
+
+.contact-button {
+    margin: auto;
+}
+
+
+
+.contact-map {
+    margin-top: 100px;
+}
+
+.contact-map-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #056341;
+    margin-bottom: 20px;
+}
+
+.map-embed {
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    /* importantissimo per arrotondare anche l'iframe */
+}
+
+.contact-map-address {
+    margin-top: 18px;
+    color: #056341;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media screen and (max-width: 480px) {
 

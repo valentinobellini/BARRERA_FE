@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 /* ::-webkit-scrollbar {
     display: none;
 } */
@@ -18,7 +20,10 @@ body {
     background-color: #ddf5ec;
 }
 
-
+h1,
+h2 {
+    font-family: 'Roboto';
+}
 
 
 
@@ -93,11 +98,13 @@ header {
     text-decoration: none;
     color: #056341;
     font-weight: 800;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     text-transform: uppercase;
 
     /* evita l'andata a capo */
     white-space: nowrap;
+    font-family: 'Roboto';
+
 }
 
 .nav-item:hover {
@@ -178,7 +185,7 @@ header {
     color: #056341;
     margin: auto;
     text-align: center;
-    margin-bottom: 32px;
+    margin-bottom: 74px;
 }
 
 .cta p {
