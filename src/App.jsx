@@ -23,6 +23,7 @@ import LoginPage from "./pages/LoginPage";
 import ProtectedRoute from "./components/Auth/ProtectedRoute";
 
 import ScrollToTop from "./components/ScrollToTop";
+import LenisScroll from "./components/LenisScroll";
 
 
 function AnimatedRoutes() {
@@ -80,9 +81,11 @@ function AnimatedRoutes() {
 export default function App() {
   return (
     <PostProvider>
-      <BrowserRouter>
-        <AnimatedRoutes />
-      </BrowserRouter>
+      <LenisScroll>
+        <BrowserRouter>
+          <AnimatedRoutes />
+        </BrowserRouter>
+      </LenisScroll>
     </PostProvider>
   );
 }

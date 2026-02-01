@@ -31,7 +31,7 @@ const TrayectoriaPage = () => {
 
 
                 <p className="trayectoria-text">
-                    Egresada de la <strong>Universidad Autónoma de Nuevo León</strong>, Especialidad en HRE No. 25 del IMSS, ha ocupado puestos clave en instituciones públicas del Sector Salud de Monterrey, entre ellos <strong>Jefa de Urgencias</strong>, <strong>Jefa Terapia Intensiva</strong> y <strong>Subdirectora Médica, H3</strong>.
+                    Egresada de la <strong>Universidad Autónoma de Nuevo León</strong>, Especialidad en HRE No. 25 del IMSS, ha ocupado puestos clave en instituciones públicas del Sector Salud de Monterrey, entre ellos <strong>Jefa de Urgencias</strong>, <strong>Jefa Terapia Intensiva</strong> y <strong>Subdirectora Médica, H3.</strong>
                 </p>
 
                 <p className="trayectoria-text">
@@ -43,8 +43,16 @@ const TrayectoriaPage = () => {
                 </p>
 
                 <p className="trayectoria-text">
-                    Como internista se encuentra certificada por el Consejo Mexicano de Medicina Interna, y mantiene recertificación vigente, fue Presidenta del Colegio de Medicina Interna de Noreste, y actualmente participa activamente en este mismo colegio y es socia activa del Colegio de Medicos Cirujanos del Estado de Nuevo Leon
+                    Como internista se encuentra certificada por el Consejo Mexicano de Medicina Interna, y mantiene recertificación vigente, fue Presidenta del Colegio de Medicina Interna de Noreste, y actualmente participa activamente en este mismo colegio y es socia activa del Colegio de Medicos Cirujanos del Estado de Nuevo Leon.
                 </p>
+
+                <div className="logo-wrap">
+                    <div className="img-wrap"><img src="/img/uni.png" alt="" /></div>
+                    <div className="img-wrap"><img src="/img/interna.png" alt="" /></div>
+                    <div className="img-wrap"><img src="/img/nuevoleon.png" alt="" /></div>
+                    <div className="img-wrap"><img src="/img/noreste.png" alt="" /></div>
+
+                </div>
 
             </motion.div>
         </>

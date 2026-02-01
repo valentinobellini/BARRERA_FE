@@ -2,6 +2,7 @@
     max-width: 80%;
     margin: auto;
     /* centrato + spazio sotto */
+
 }
 
 .trayectoria-title {
@@ -26,6 +27,36 @@
 .trayectoria-text:last-child {
     margin-bottom: 150px;
 }
+
+
+
+.logo-wrap {
+    margin-top: 150px;
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+    /* border: solid 1px green; */
+}
+
+
+.img-wrap img {
+    width: 180px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media (max-width: 1024px) {
 
