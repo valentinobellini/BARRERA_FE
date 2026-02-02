@@ -78,6 +78,14 @@ h2 {
     font-weight: bold;
 }
 
+.tags {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
 .tag {
     margin: 0 5px;
+    max-width: 20%;
 }
