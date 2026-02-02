@@ -1,4 +1,4 @@
-.posts-container {
+/* .posts-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -6,7 +6,23 @@
     gap: 50px;
     row-gap: 50px;
     margin-bottom: 150px;
+} */
+
+
+.posts-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* ✅ invece di center */
+    align-items: flex-start;
+    /* ✅ invece di center */
+    gap: 50px;
+    row-gap: 50px;
+    margin-bottom: 150px;
+    width: 100%;
 }
+
+
 
 .post-row:hover {
     cursor: pointer;
