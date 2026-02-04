@@ -32,12 +32,20 @@
 .contact-button-wrapper {
     display: flex;
     justify-content: center;
-    margin: 100px 0;
+    margin: 150px 0;
 }
 
 
 .contact-button {
     margin: auto;
+    will-change: transform;
+    transition: transform 0.1s cubic-bezier(.33, .59, .83, .67);
+}
+
+.contact-button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+
 }
 
 
