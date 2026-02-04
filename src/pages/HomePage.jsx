@@ -34,13 +34,19 @@ const HomePage = () => {
                         <ServiceCard
                             image='/img/diabetes.png'
                             title='Tratamiento Integral para Diabetes'
-                            text='La Dra. Ceja ofrece un enfoque integral para el manejo de la diabetes, enfocado en la prevención de complicaciones y la mejora de la calidad de vida mediante educación y monitoreo.'
+                            text='La Dra. Ceja ofrece un enfoque integral para el manejo de la diabetes, enfocado en la prevención de complicaciones y la mejora de la calidad de vida .'
                         ></ServiceCard>
 
                         <ServiceCard
                             image='/img/ipertension.png'
 
-                            title='Control de Hipertensión Arterial'
+                            title={
+                                <>
+                                    Control de
+                                    <br />
+                                    Hipertensión Arterial
+                                </>
+                            }
                             text='Con una estrategia de diagnóstico y control de la presión arterial, la Dra. Ceja ayuda a prevenir enfermedades cardiovasculares y a mejorar la salud de sus pacientes.'
                         ></ServiceCard>
 
