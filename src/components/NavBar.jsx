@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import Lottie from "lottie-react";
-import ecg from "../assets/animations/ecg.json";
+import ecg from "../assets/animations/ecg-mod.json";
 
 import BurgerMenu from "./BurgerMenu";
 import "./BurgerMenu.css";
@@ -19,6 +19,7 @@ export default function NavBar() {
                             speed={2} // velocità doppia
                         />
                     </NavLink>
+                    <p>Dra. Lucrecia <br />Ceja Barrera</p>
                 </div>
 
                 <nav className="navlist">

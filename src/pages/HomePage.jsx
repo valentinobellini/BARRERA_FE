@@ -57,19 +57,6 @@ const HomePage = () => {
 
 
 
-            {/* REFERENCIAS */}
-            {/* <section className="references">
-                    <motion.div className="references-wrapper"
-                        initial={{ opacity: 0, y: 120 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, margin: "-50px", amount: 0.2 }}
-                        transition={{ duration: 0.8, ease: "easeOut" }}>
-                        <h2>Lo que dicen mis pacientes</h2>
-
-              
-                        <ReviewsCarousel />
-                    </motion.div>
-                </section> */}
 
             <section className="references">
                 <motion.div

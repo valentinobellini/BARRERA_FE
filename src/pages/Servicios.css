@@ -3,6 +3,31 @@
     margin: auto;
 }
 
+
+.service-wrapper {
+    display: flex;
+    gap: 50px;
+}
+
+
+.service-img {
+    margin: 80px 0 24px;
+}
+
+
+.service {
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.service-img img {
+    width: 300px;
+    height: auto;
+    object-fit: cover;
+}
+
 .servicios-title {
     font-size: 3.1rem;
     font-weight: 800;
@@ -23,6 +48,10 @@
     color: #056341;
     margin: 80px 0 24px;
 }
+
+
+
+
 
 
 /* Responsive */
