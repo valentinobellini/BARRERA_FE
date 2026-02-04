@@ -118,11 +118,18 @@ header {
     /* evita l'andata a capo */
     white-space: nowrap;
     font-family: 'Roboto';
-
 }
 
+.navlist ul li {
+    will-change: transform;
+    transition: transform 0.1s cubic-bezier(.33, .59, .83, .67);
+}
+
+
+
+
 .nav-item:hover {
-    scale: 1.2;
+    transform: scale(1.1);
 }
 
 
@@ -146,7 +153,7 @@ header {
     width: 100%;
     margin: auto;
     text-align: center;
-    margin-bottom: 56px;
+    margin-bottom: 100px;
 }
 
 
@@ -170,10 +177,57 @@ header {
     width: 70%;
     margin: auto;
     text-align: center;
-    margin-bottom: 56px;
+    margin-bottom: 48px;
 }
 
 
+
+.references-subtitle {
+    font-size: 1.5rem;
+    /* font-weight: 800; */
+    color: #056341;
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 56px;
+}
+
+.references-subtitle a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.doctoralia-link {
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    font-weight: 500;
+}
+
+
+
+
+.doctoralia-link::after {
+    content: "";
+    position: absolute;
+    left: -4px;
+    right: -4px;
+    bottom: 0.05em;
+    height: 1.1em;
+
+    background: #FA9F47;
+    border-radius: 10px 9px 5px 2px;
+
+    z-index: -1;
+
+    transform: scaleX(0) skewX(-3deg);
+    transform-origin: left;
+    transition: transform 0.1s ease-out;
+}
+
+.doctoralia-link:hover::after {
+    transform: scaleX(1) skewX(-12deg);
+}
 
 
 
@@ -190,7 +244,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: auto;
+    margin: 0 auto 50px;
 }
 
 .cta h2 {
@@ -199,7 +253,7 @@ header {
     color: #056341;
     margin: auto;
     text-align: center;
-    margin-bottom: 74px;
+    margin-bottom: 100px;
 }
 
 .cta p {
@@ -208,7 +262,9 @@ header {
     color: #056341;
     margin: auto;
     text-align: center;
-    margin-bottom: 48px;
+    margin-bottom: 80px;
+
+    width: 90%;
 }
 
 .cta-button {
@@ -264,6 +320,13 @@ footer {
 .whatsapp-icon {
     font-size: 3rem;
     color: #056341;
+
+    will-change: transform;
+    transition: transform 0.1s cubic-bezier(.33, .59, .83, .67);
+}
+
+.whatsapp-icon:hover {
+    transform: scale(1.2);
 }
 
 

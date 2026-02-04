@@ -14,15 +14,13 @@ const ServiceCard = ({ image, title, text }) => {
             ref={ref}
             initial={{ opacity: 0, y: 120 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-
-            whileHover={{
-                scale: 1.02,
-                transition: {
-                    duration: 0.15,
-                    ease: [0.22, 1, 0.36, 1] // ease "cinematografica"
-                }
-            }}>
+            whileHover={{ scale: 1.1 }}
+            transition={{
+                duration: 0.8,
+                ease: "easeOut",
+                scale: { duration: 0.1, ease: [.33, .59, .83, .67] }
+            }}
+        >
 
             <div className="service-img" ><img src={image} alt="" /></div>
             <h3 className="service-card-title">{title}</h3>

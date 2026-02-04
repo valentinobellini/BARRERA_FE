@@ -34,7 +34,7 @@ const HomePage = () => {
                         <ServiceCard
                             image='/img/diabetes.png'
                             title='Tratamiento Integral para Diabetes'
-                            text='La Dra. Ceja ofrece un enfoque completo para el manejo de la diabetes, enfocándose en prevenir complicaciones y mejorar la calidad de vida de sus pacientes mediante educación y monitoreo personalizado.'
+                            text='La Dra. Ceja ofrece un enfoque integral para el manejo de la diabetes, enfocado en la prevención de complicaciones y la mejora de la calidad de vida mediante educación y monitoreo.'
                         ></ServiceCard>
 
                         <ServiceCard
@@ -48,7 +48,7 @@ const HomePage = () => {
                             image='/img/general.png'
 
                             title='Medicina Interna General para Adultos'
-                            text='La Dra. Ceja aborda desde enfermedades agudas hasta el manejo de condiciones complejas, brindando un enfoque integral en la salud del adulto.'
+                            text='La Dra. Ceja aborda desde enfermedades agudas hasta el manejo de condiciones complejas, brindando un enfoque integral en la salud del adulto moderno.'
                         ></ServiceCard>
                     </div>
                 </motion.div>
@@ -58,18 +58,51 @@ const HomePage = () => {
 
 
             {/* REFERENCIAS */}
+            {/* <section className="references">
+                    <motion.div className="references-wrapper"
+                        initial={{ opacity: 0, y: 120 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-50px", amount: 0.2 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}>
+                        <h2>Lo que dicen mis pacientes</h2>
+
+              
+                        <ReviewsCarousel />
+                    </motion.div>
+                </section> */}
+
             <section className="references">
-                <motion.div className="references-wrapper"
+                <motion.div
+                    className="references-wrapper"
                     initial={{ opacity: 0, y: 120 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-50px", amount: 0.2 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}>
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                >
                     <h2>Lo que dicen mis pacientes</h2>
 
-                    {/* <ReviewCards /> */}
+                    <p className="references-subtitle">
+                        Más de 200 opiniones positivas de pacientes en{" "}
+                        <a
+                            href="https://www.doctoralia.com.mx/lucrecia-ceja-barrera/internista/nuevo-leon"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="doctoralia-link"
+                        >
+                            Doctoralia
+                            {/* <img
+                                src="/img/doctoralia.png"
+                                alt="Doctoralia"
+                                className="doctoralia-logo"
+                            /> */}
+                        </a>{" "}
+                        que respaldan su atención médica.
+                    </p>
+
                     <ReviewsCarousel />
                 </motion.div>
             </section>
+
 
 
             {/* CTA */}

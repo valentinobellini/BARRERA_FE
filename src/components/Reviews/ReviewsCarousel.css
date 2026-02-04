@@ -2,7 +2,7 @@
 .reviews-carousel {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     gap: 32px;
     width: 100%;
     margin: 60px 0;

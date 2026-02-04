@@ -1,5 +1,5 @@
 .service-card {
-    width: 350px;
+    width: 400px;
 
     display: flex;
     flex-direction: column;
@@ -29,7 +29,7 @@
 }
 
 .service-card-text {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 100;
     color: #056341;
     text-align: center;
