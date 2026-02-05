@@ -4,9 +4,16 @@ import PostList from '../components/BlogSection/PostList'
 import './Blog.css'
 import transition from "../components/transition";
 import { motion } from "framer-motion"
+import { useEffect, useState } from "react"
 
 const BlogPage = () => {
     const { posts, filteredPosts, searchQuery } = usePostContext()
+    const [ready, setReady] = useState(false)
+
+    useEffect(() => {
+        const id = setTimeout(() => setReady(true), 650)
+        return () => clearTimeout(id)
+    }, [])
 
     const postsToShow = searchQuery.trim()
         ? (Array.isArray(filteredPosts) ? filteredPosts : [])
@@ -22,7 +29,7 @@ const BlogPage = () => {
             <SearchBar />
 
             <div className="blog-wrapper">
-                <PostList posts={postsToShow} />
+                {ready ? <PostList posts={postsToShow} /> : null}
             </div>
         </motion.div>
     )

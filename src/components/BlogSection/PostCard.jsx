@@ -38,7 +38,7 @@ export default function PostCard({ id, image_url, published_at, reading_time, ti
             <div className="post-card-image">
                 {image_url ?
                     <div className='post-thumb'>
-                        <img src={image_url} alt="" />
+                        <img src={image_url} alt="" loading="lazy" decoding="async" />
                     </div> :
                     null}
             </div>

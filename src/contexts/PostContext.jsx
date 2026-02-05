@@ -51,9 +51,6 @@ export const PostProvider = ({ children }) => {
         fetchPosts()
     }, [])
 
-    useEffect(() => {
-        console.log('📌 POSTS:', posts)
-    }, [posts])
 
     return (
         <PostContext.Provider value={{
