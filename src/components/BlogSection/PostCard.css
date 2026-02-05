@@ -80,6 +80,7 @@
 .tag-wrapper {
     display: flex;
     gap: 7px;
+    /* margin-bottom: 10px; */
 }
 
 

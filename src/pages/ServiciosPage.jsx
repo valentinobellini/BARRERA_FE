@@ -67,9 +67,7 @@ const ServiciosPage = () => {
 
 
                 <div className="service-wrapper">
-                    <div className="service-img">
-                        <img src="/img/ipertension.png" alt="" />
-                    </div>
+
 
                     <div className="service">
 
@@ -88,6 +86,10 @@ const ServiciosPage = () => {
                             de infartos y accidentes cerebrovasculares.
                         </p>
 
+                    </div>
+
+                    <div className="service-img">
+                        <img src="/img/ipertension.png" alt="" />
                     </div>
                 </div>
 

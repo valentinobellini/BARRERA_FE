@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import './PostList.css'
 import { usePostContext } from '../../contexts/PostContext'
-import { useState, useEffect } from 'react'
+
 import PostCard from './PostCard'
 
 // ✅ funzione per convertire il titolo in slug URL-friendly
@@ -30,7 +30,7 @@ const PostList = ({ posts }) => {
   return (
     <div className="posts-container">
       {posts.map((post) => {
-        console.log(post)
+
         return <PostCard key={post.id} {...post} />
       })}
     </div>

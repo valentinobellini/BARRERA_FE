@@ -369,7 +369,7 @@ footer {
 .slide-in,
 .slide-out {
     position: fixed;
-    top: 130px;
+    top: 150px;
     /* ⬅️ header fisso 150px */
     left: 0;
     right: 0;

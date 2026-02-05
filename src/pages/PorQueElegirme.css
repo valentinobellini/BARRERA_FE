@@ -1,3 +1,7 @@
+/* ============================
+   PORQUE ELEGIRME
+============================ */
+
 .porque-elegirme {
     max-width: 80%;
     margin: 0 auto;
@@ -11,100 +15,119 @@
     width: 80%;
 }
 
-.porque-elegirme-list {
-    list-style: none;
-    padding: 0;
+.porque-elegirme-subtitle {
     margin-bottom: 150px;
-}
-
-.porque-elegirme-list li {
-    display: flex;
-    align-items: flex-start;
-    gap: 24px;
-    margin-bottom: 36px;
-    line-height: 1.6;
-    color: #056341;
-    font-size: 1.5rem;
-}
-
-.check-icon {
-    color: #056341;
-    width: 16px;
-    height: 16px;
-    flex: 0 0 24px;
-    font-size: 2rem;
-    margin-top: 12px;
-}
-
-.porque-elegirme-content {
-    margin-bottom: 150px;
-
-}
-
-.porque-elegirme-content p,
-li {
     line-height: 2.3rem;
     color: #056341;
     font-size: 1.5rem;
 }
 
-.porque-elegirme-content p {
-    margin-bottom: 64px;
+/* ✅ layout 4 + 3 con wrap */
+.porque-elegirme-content {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 64px;
+    column-gap: 32px;
+    align-items: stretch;
+    justify-content: center;
 }
 
-.porque-elegirme-content ul {
-    margin-bottom: 64px;
+/* ✅ CARD: altezza fissa + struttura */
+.porque-wrap {
+    flex: 0 0 calc((100% - 3 * 32px) / 4);
+    /* height: 660px; */
+    /* <-- cambia qui se vuoi più/meno alte */
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.porque-elegirme-content li {
-    margin-top: 10px;
+/* ✅ BLOCCO IMMAGINE: altezza fissa + centratura */
+.porque-img {
+    height: 120px;
+    /* <-- altezza fissa area immagine */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
 }
 
-.porque-elegirme-content h2 {
-    font-size: 2rem;
+.porque-img img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+/* ✅ TITOLO CARD: altezza fissa + centratura */
+.porque-wrap h2 {
+    height: 80px;
+    /* <-- altezza fissa titolo */
+    width: 100%;
+    margin: 0 0 16px 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    font-size: 1.6rem;
+    /* puoi alzare se ti entra */
     font-weight: 800;
     color: #056341;
-    margin-bottom: 24px;
+    line-height: 1.2;
 }
 
+/* ✅ TESTO/LISTA: altezza fissa (scegli overflow) */
+.porque-wrap ul {
+    /* height: 260px; */
+    /* <-- altezza fissa testo */
+    width: 100%;
+    margin: 0;
+    padding-left: 18px;
 
+    overflow: auto;
+    /* cambia in 'hidden' se vuoi tagliare */
+    list-style-position: inside;
+}
 
+.porque-wrap li {
+    margin-top: 20px;
+    margin-bottom: 0;
+    line-height: 1.6rem;
+    color: #056341;
+    font-size: 1.3rem;
+}
 
-
-
-
-
-
-
-
-
-
-
+/* ============================
+   RESPONSIVE
+============================ */
 
 @media (max-width: 1220px) {
     .porque-elegirme-title {
         font-size: 2.5rem;
         width: 80%;
     }
-
-
 }
 
-
-
-
-
-@media screen and (max-width: 1024px) {
+/* 2 colonne su tablet */
+@media (max-width: 1024px) {
     .porque-elegirme-title {
         font-size: 2.5rem;
-
         width: 90%;
+    }
+
+    .porque-wrap {
+        flex: 0 0 calc((100% - 1 * 32px) / 2);
+        height: 560px;
+        /* puoi cambiare anche qui se vuoi */
     }
 }
 
-@media screen and (max-width: 480px) {
-
-
+/* 1 colonna su mobile */
+@media (max-width: 480px) {
     .porque-elegirme-title {
         font-size: 2.5rem;
         font-weight: 800;
@@ -113,5 +136,23 @@ li {
         width: 100%;
     }
 
+    .porque-wrap {
+        flex: 0 0 100%;
+        height: auto;
+        /* su mobile spesso meglio auto */
+    }
 
+    .porque-wrap ul {
+        height: auto;
+        /* su mobile spesso meglio auto */
+        overflow: visible;
+    }
+
+    .porque-wrap h2 {
+        height: auto;
+    }
+
+    .porque-img {
+        height: 110px;
+    }
 }
