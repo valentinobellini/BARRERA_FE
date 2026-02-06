@@ -1,5 +1,5 @@
 /* ============================
-   PORQUE ELEGIRME
+   HEADER
 ============================ */
 
 .porque-elegirme {
@@ -16,43 +16,81 @@
 }
 
 .porque-elegirme-subtitle {
-    margin-bottom: 150px;
+    margin-bottom: 120px;
     line-height: 2.3rem;
     color: #056341;
     font-size: 1.5rem;
 }
 
-/* ✅ layout 4 + 3 con wrap */
-.porque-elegirme-content {
-    display: flex;
-    flex-wrap: wrap;
-    row-gap: 64px;
-    column-gap: 32px;
-    align-items: stretch;
-    justify-content: center;
+/* ============================
+   CAROUSEL wrapper + track
+============================ */
+
+.porque-carousel-wrapper {
+    width: 70vw;
+    margin: 0 auto 200px auto;
 }
 
-/* ✅ CARD: altezza fissa + struttura */
-.porque-wrap {
-    flex: 0 0 calc((100% - 3 * 32px) / 4);
-    /* height: 660px; */
-    /* <-- cambia qui se vuoi più/meno alte */
+/* track con bordo come nel tuo */
+.porque-cards-wrapper {
+    display: flex;
+    overflow: hidden;
+    /* come il tuo esempio */
+    /* border: 1px solid #000; */
+    padding: 0;
+    margin: 0;
+
+    /* importante: scroll reale anche se overflow hidden? no.
+     Quindi: teniamo overflow-x: auto e nascondiamo la scrollbar. */
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+
+    /* snap carino (opzionale) */
+    scroll-snap-type: x mandatory;
+
+    /* nascondi scrollbar */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.porque-cards-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.porque-item {
+    list-style: none;
+    /* background-color: #ECECE9; */
+    /* border-right: 1px solid #000; */
+    scroll-snap-align: start;
+
+    flex: 0 0 auto;
+    /* ✅ evita che flex ridimensioni le card */
+}
+
+.porque-item:hover {
+    /* background-color: #ffffff; */
+}
+
+/* la card “contenuto” */
+.porque-card {
     box-sizing: border-box;
+    width: calc(70vw / 3);
+    /* 3 visibili come nel tuo */
+    padding: 24px 20px 20px 20px;
 
     display: flex;
     flex-direction: column;
-    align-items: center;
+    gap: 32px;
 }
 
-/* ✅ BLOCCO IMMAGINE: altezza fissa + centratura */
+/* immagine: altezza fissa + centrata */
 .porque-img {
     height: 120px;
-    /* <-- altezza fissa area immagine */
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 16px;
 }
 
 .porque-img img {
@@ -61,39 +99,29 @@
     object-fit: contain;
 }
 
-/* ✅ TITOLO CARD: altezza fissa + centratura */
-.porque-wrap h2 {
+/* titolo: stile tuo */
+.porque-card h2 {
     height: 80px;
-    /* <-- altezza fissa titolo */
-    width: 100%;
-    margin: 0 0 16px 0;
-
+    margin: 0;
     display: flex;
+    align-items: flex-start;
     justify-content: center;
-    align-items: center;
     text-align: center;
 
     font-size: 1.6rem;
-    /* puoi alzare se ti entra */
     font-weight: 800;
     color: #056341;
     line-height: 1.2;
 }
 
-/* ✅ TESTO/LISTA: altezza fissa (scegli overflow) */
-.porque-wrap ul {
-    /* height: 260px; */
-    /* <-- altezza fissa testo */
-    width: 100%;
+/* lista: bullet non tagliati, stile tuo */
+.porque-card ul {
     margin: 0;
-    padding-left: 18px;
-
-    overflow: auto;
-    /* cambia in 'hidden' se vuoi tagliare */
+    padding-left: 0;
     list-style-position: inside;
 }
 
-.porque-wrap li {
+.porque-card li {
     margin-top: 20px;
     margin-bottom: 0;
     line-height: 1.6rem;
@@ -102,7 +130,41 @@
 }
 
 /* ============================
-   RESPONSIVE
+   CONTROLS sotto, frecce ai lati
+============================ */
+
+.porque-controls {
+    /* border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    background-color: #ECECE9; */
+
+    width: 100%;
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* ✅ frecce ai lati */
+    padding: 0 20px;
+}
+
+.porque-controls:hover {
+    /* background-color: #ffffff; */
+}
+
+.porque-arrow {
+    background: transparent;
+    border: none;
+    padding: 8px 16px;
+    font-size: 2.6rem;
+    font-weight: 900;
+    cursor: pointer;
+    color: #056341;
+}
+
+/* ============================
+   RESPONSIVE (come vuoi tu)
 ============================ */
 
 @media (max-width: 1220px) {
@@ -110,49 +172,29 @@
         font-size: 2.5rem;
         width: 80%;
     }
+
+    .porque-carousel-wrapper {
+        width: 80vw;
+    }
+
+    .porque-card {
+        width: calc(80vw / 2);
+        /* 2 visibili */
+    }
 }
 
-/* 2 colonne su tablet */
 @media (max-width: 1024px) {
     .porque-elegirme-title {
         font-size: 2.5rem;
         width: 90%;
     }
 
-    .porque-wrap {
-        flex: 0 0 calc((100% - 1 * 32px) / 2);
-        height: 560px;
-        /* puoi cambiare anche qui se vuoi */
-    }
-}
-
-/* 1 colonna su mobile */
-@media (max-width: 480px) {
-    .porque-elegirme-title {
-        font-size: 2.5rem;
-        font-weight: 800;
-        color: #056341;
-        margin-bottom: 48px;
-        width: 100%;
+    .porque-carousel-wrapper {
+        width: 90vw;
     }
 
-    .porque-wrap {
-        flex: 0 0 100%;
-        height: auto;
-        /* su mobile spesso meglio auto */
-    }
-
-    .porque-wrap ul {
-        height: auto;
-        /* su mobile spesso meglio auto */
-        overflow: visible;
-    }
-
-    .porque-wrap h2 {
-        height: auto;
-    }
-
-    .porque-img {
-        height: 110px;
+    .porque-card {
+        width: 90vw;
+        /* 1 visibile */
     }
 }

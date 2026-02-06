@@ -11,19 +11,19 @@
 
 
 .service-img {
-    margin: 80px 0 24px;
+    margin: 140px 0 24px;
+
 }
 
 
 .service {
     display: flex;
     flex-direction: column;
-
 }
 
 
 .service-img img {
-    width: 300px;
+    width: 250px;
     height: auto;
     object-fit: cover;
 }

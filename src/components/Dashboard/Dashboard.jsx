@@ -299,14 +299,20 @@ export default function Dashboard() {
 
                         <div className="form-wrapper-time">
                             <input type="number" name="reading_time" placeholder="Tiempo de lectura (min)" value={postForm.reading_time} onChange={onChangePostForm} />
-                            <input type="date" name="published_at" value={postForm.published_at} onChange={onChangePostForm} />
+                            <input type="date" name="published_at" value={postForm.published_at} onChange={onChangePostForm} lang="es-ES" />
                         </div>
 
                         <textarea name="content" placeholder="Contenido del post..." value={postForm.content} onChange={onChangePostForm} required />
                         <input name="tags" placeholder="Etiquetas separadas por coma" value={postForm.tags} onChange={onChangePostForm} />
 
                         <div className="form-buttons">
+
+
+
                             <input type="file" name="image" onChange={onChangePostForm} />
+
+
+
                             {showSaveDraft && (
                                 <button type="button" onClick={() => submitPost(false)}>Guardar como borrador</button>
                             )}

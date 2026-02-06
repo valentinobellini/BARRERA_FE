@@ -2,7 +2,7 @@
 .dashboard {
     display: flex;
     font-family: 'Montserrat', sans-serif;
-    margin-bottom: 150px;
+    justify-content: center;
 }
 
 .dashboard-title {

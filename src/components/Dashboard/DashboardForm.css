@@ -17,7 +17,16 @@
 
 .form-wrapper-title input {
     width: 45%;
+
+    padding: 0.6rem 0.8rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: white;
 }
+
+
 
 .form-wrapper-time {
     display: flex;
@@ -33,6 +42,7 @@
 .post-form input[type="number"],
 .post-form input[type="date"],
 .post-form input[type="file"],
+.post-form input[name="tags"],
 .post-form textarea {
     padding: 0.6rem 0.8rem;
     border: none;
@@ -81,10 +91,21 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem;
+
 }
 
 
 .form-buttons input {
-    width: 20%;
+    width: 35%;
+}
+
+
+.post-form input,
+.post-form textarea {
+    color: gray;
+}
+
+.post-form input::placeholder,
+.post-form textarea::placeholder {
+    color: gray;
 }
