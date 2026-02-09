@@ -28,7 +28,7 @@
 
 .porque-carousel-wrapper {
     width: 70vw;
-    margin: 0 auto 200px auto;
+    margin: 0 auto 100px auto;
 }
 
 /* track con bordo come nel tuo */
@@ -101,7 +101,7 @@
 
 /* titolo: stile tuo */
 .porque-card h2 {
-    height: 80px;
+
     margin: 0;
     display: flex;
     align-items: flex-start;
@@ -277,11 +277,27 @@
     }
 
     .porque-carousel-wrapper {
-        width: 90vw;
+        width: 70vw;
     }
 
     .porque-card {
-        width: 90vw;
+        width: 70vw;
         /* 1 visibile */
     }
+
+    .porque-controls {
+        /* padding: 0; */
+    }
+}
+
+
+@media (max-width: 480px) {
+    .porque-elegirme-title {
+        width: 100%;
+        text-align: center;
+        font-size: 2.3rem;
+
+    }
+
+
 }

@@ -70,10 +70,14 @@ const ServiciosPage = () => {
 
 
                     <div className="service">
-
+                        <div className="service-img service-img-mobile">
+                            <img src="/img/ipertension.png" alt="" />
+                        </div>
                         <h3 className="servicios-subtitle">
                             Control de Hipertensión Arterial en Monterrey
                         </h3>
+
+
 
                         <p className="servicios-text">
                             La <strong>Hipertensión</strong> arterial es una de las enfermedades crónicas más
@@ -88,7 +92,7 @@ const ServiciosPage = () => {
 
                     </div>
 
-                    <div className="service-img">
+                    <div className="service-img service-img-desktop">
                         <img src="/img/ipertension.png" alt="" />
                     </div>
                 </div>
