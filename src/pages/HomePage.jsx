@@ -26,7 +26,7 @@ const HomePage = () => {
                 <motion.div className="services-wrapper"
                     initial={{ opacity: 0, y: 120 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-100px", amount: 0.2 }}
+                    viewport={{ once: true, margin: "-100px", amount: 0.1 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}>
 
                     <h2>Servicios de Medicina Interna Especializada en Monterrey</h2>
@@ -69,7 +69,7 @@ const HomePage = () => {
                     className="references-wrapper"
                     initial={{ opacity: 0, y: 120 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-50px", amount: 0.2 }}
+                    viewport={{ once: true, margin: "-50px", amount: 0.1 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                 >
                     <h2>Lo que dicen mis pacientes</h2>
