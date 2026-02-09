@@ -56,15 +56,34 @@
 
 /* Responsive */
 @media (max-width: 1024px) {
+    .service-wrapper {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+    }
+
     .servicios-title {
-        line-height: 3.1rem;
+        line-height: 2..8rem;
         font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .servicios-subtitle {
+        margin: 30px 0 24px;
+        text-align: center;
+
+    }
+
+    .service-img {
+        margin: 30px 0 24px;
+
     }
 }
 
 @media screen and (max-width: 480px) {
     .servicios-title {
-        font-size: 1.8rem;
+        font-size: 2.2rem;
         font-weight: 800;
         color: #056341;
         margin-bottom: 48px;
