@@ -13,13 +13,13 @@
     border-radius: 8px;
 }
 
-h1 {
+.post-detail h1 {
     margin-bottom: 30px;
     font-size: 3.1rem;
     font-family: 'Roboto';
 }
 
-h2 {
+.post-detail h2 {
     font-size: 2rem;
     font-weight: 300;
     margin-bottom: 30px;
@@ -78,14 +78,26 @@ h2 {
     font-weight: bold;
 }
 
-.tags {
+.post-detail-tags {
     display: flex;
     justify-content: start;
     align-items: center;
     flex-wrap: wrap;
+    gap: 8px;
 }
 
-.tag {
-    margin: 0 5px;
-    max-width: 20%;
+.post-detail-tags-label {
+    font-weight: 600;
+    margin-right: 4px;
+}
+
+.post-detail-tag {
+    background: #F1AB96;
+    color: #056341;
+    font-size: 14px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }

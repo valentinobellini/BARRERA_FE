@@ -10,7 +10,7 @@
     box-shadow: 7px 10px 40px 0 rgba(0, 0, 0, 0.25);
 
     width: 560px;
-    height: 590px;
+    min-height: 600px;
 }
 
 .post-card-image img {
@@ -54,7 +54,7 @@
     flex-wrap: wrap;
 }
 
-.tag {
+.post-card-tag {
     background: #F1AB96;
     color: #056341;
     font-size: 14px;
@@ -65,6 +65,7 @@
     align-items: center;
 
     text-align: center;
+    cursor: pointer;
 }
 
 .post-card:hover {
@@ -72,14 +73,15 @@
 }
 
 
-.tag:hover {
+.post-card-tag:hover {
     background: #E4572E;
     color: #F4F4F4;
 }
 
-.tag-wrapper {
+.post-card-tag-wrapper {
     display: flex;
     gap: 7px;
+    flex-wrap: wrap;
     /* margin-bottom: 10px; */
 }
 

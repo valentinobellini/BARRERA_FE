@@ -25,6 +25,17 @@
 }
 
 
+@media screen and (max-width: 1024px) {
+
+
+    .blog-title {
+
+        max-width: 14ch;
+    }
+
+
+}
+
 
 @media screen and (max-width: 480px) {
 
@@ -35,6 +46,7 @@
         color: #056341;
         margin-bottom: 36px;
         text-align: center;
+        max-width: 14ch;
     }
 
 

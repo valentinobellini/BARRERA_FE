@@ -6,11 +6,13 @@ import { useParams } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { FaRegCalendarAlt, FaRegClock } from 'react-icons/fa'
 import './PostDetail.css'
+import { normalizeTags } from '../../utils/normalizeTags'
 
 export default function PostDetail() {
     const { id } = useParams()
     const [post, setPost] = useState(null)
     const [error, setError] = useState(null)
+    const normalizedTags = normalizeTags(post?.tags)
 
     useEffect(() => {
         const fetchPost = async () => {
@@ -56,14 +58,13 @@ export default function PostDetail() {
 
             <p className="content">{post.content}</p>
 
-            <div className="tags">
-                {Array.isArray(post.tags) && post.tags.length > 0 && (
+            <div className="post-detail-tags">
+                {normalizedTags.length > 0 && (
                     <>
-                        <span className="tags-label">Etiquetas:</span>{' '}
-                        {post.tags.map((tag, index) => (
-                            <span key={index} className="tag">
+                        <span className="post-detail-tags-label">Etiquetas:</span>
+                        {normalizedTags.map((tag, index) => (
+                            <span key={`${tag}-${index}`} className="post-detail-tag">
                                 {tag}
-                                {index < post.tags.length - 1 && ', '}
                             </span>
                         ))}
                     </>

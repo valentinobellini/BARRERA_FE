@@ -5,6 +5,7 @@ import { FaEdit, FaTrash, FaRegFileAlt, FaFileSignature, FaTags } from 'react-ic
 import './Dashboard.css'
 import './DashboardForm.css'
 import { motion, useInView } from 'framer-motion'
+import { normalizeTags } from '../../utils/normalizeTags'
 
 export default function Dashboard() {
     const [activeTab, setActiveTab] = useState('posts')
@@ -116,7 +117,7 @@ export default function Dashboard() {
             reading_time: post.reading_time || '',
             published_at: post.published_at ? String(post.published_at).slice(0, 10) : '',
             content: post.content || '',
-            tags: Array.isArray(post.tags) ? post.tags.join(', ') : '',
+            tags: normalizeTags(post.tags).join(', '),
             image: null
         })
         setShowForm(true)
@@ -134,7 +135,7 @@ export default function Dashboard() {
         const data = new FormData()
         Object.entries(postForm).forEach(([key, val]) => {
             if (key === 'tags') {
-                const arr = val ? val.split(',').map(t => t.trim()).filter(Boolean) : []
+                const arr = normalizeTags(val)
                 data.append('tags', JSON.stringify(arr))
             } else if (key === 'image') {
                 if (val) data.append('image', val)

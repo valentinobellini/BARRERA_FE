@@ -2,6 +2,7 @@ import "./PostCard.css";
 
 import { useNavigate } from 'react-router-dom'
 import { usePostContext } from '../../contexts/PostContext'
+import { normalizeTags } from '../../utils/normalizeTags'
 
 
 
@@ -20,6 +21,7 @@ export default function PostCard({ id, image_url, published_at, reading_time, ti
 
     const { searchPosts } = usePostContext()
     const navigate = useNavigate()
+    const normalizedTags = normalizeTags(tags)
 
     const handleOpen = () => {
         const slug = slugify(title);
@@ -54,12 +56,12 @@ export default function PostCard({ id, image_url, published_at, reading_time, ti
                 <p className="post-card-text">{headline}</p>
 
                 <div className="post-card-tags">
-                    {Array.isArray(tags) && tags.length > 0 && (
-                        <div className="tag-wrapper">
-                            {tags.map((tag, i) => (
+                    {normalizedTags.length > 0 && (
+                        <div className="post-card-tag-wrapper">
+                            {normalizedTags.map((tag, i) => (
                                 <div
                                     key={`${tag}-${i}`}
-                                    className="tag"
+                                    className="post-card-tag"
                                     onClick={(e) => handleTagClick(e, tag)}
                                 >
                                     {tag}
