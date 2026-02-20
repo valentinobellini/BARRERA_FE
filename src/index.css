@@ -194,7 +194,6 @@ header {
 
 .references-subtitle {
     font-size: 1.5rem;
-    /* font-weight: 800; */
     color: #056341;
     width: 70%;
     margin: auto;
@@ -539,6 +538,9 @@ Breakpoint	Dispositivi/casi d'uso
         /* gap: 70px; */
     }
 
+    .references-subtitle {
+        font-size: 1.2rem;
+    }
 
     .cta {
         width: 80%;
@@ -547,7 +549,11 @@ Breakpoint	Dispositivi/casi d'uso
     .services-wrapper h2,
     .references h2,
     .cta h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+    }
+
+    .cta p {
+        font-size: 1.2rem;
     }
 
 

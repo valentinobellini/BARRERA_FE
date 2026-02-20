@@ -69,13 +69,11 @@
 
     .service-card-title {
         font-size: 1.4rem;
-
     }
 
     .service-card-text {
         font-size: 1.2rem;
         line-height: 1.8rem;
-
     }
 }
 
@@ -83,12 +81,10 @@
 @media screen and (max-width: 480px) {
 
     .service-card-title {
-        font-size: 1.6rem;
-
+        font-size: 1.5rem;
     }
 
     .service-card-text {
         font-size: 1.2rem;
-
     }
 }

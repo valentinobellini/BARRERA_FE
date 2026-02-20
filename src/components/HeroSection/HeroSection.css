@@ -104,17 +104,17 @@
     }
 
     .hero-title {
-        font-size: 3.1rem;
+        font-size: 2.5rem;
     }
 
     .hero-head {
-        font-size: 2.1rem;
+        font-size: 1.5rem;
     }
 
     .hero-text {
         width: 100%;
 
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         line-height: 1.8rem;
         margin-bottom: 48px;
     }
