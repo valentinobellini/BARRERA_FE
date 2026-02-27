@@ -551,7 +551,9 @@ Breakpoint	Dispositivi/casi d'uso
     }
 
     .references-subtitle {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+        text-align: left;
+        width: 100%;
     }
 
     .cta {
@@ -561,11 +563,14 @@ Breakpoint	Dispositivi/casi d'uso
     .services-wrapper h2,
     .references h2,
     .cta h2 {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
+        text-align: center;
     }
 
     .cta p {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+        text-align: left;
+        width: 100%;
     }
 
 

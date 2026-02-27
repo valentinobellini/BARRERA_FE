@@ -128,21 +128,27 @@
 
 @media screen and (max-width: 480px) {
     .servicios-title {
-        font-size: 2.3rem;
+        font-size: 2.1rem;
+        line-height: 2.4rem;
         font-weight: 800;
         color: #056341;
         margin-bottom: 48px;
-        text-align: center;
+        text-align: left;
         width: 100%;
 
     }
 
     .servicios-text {
-        line-height: 2rem;
+        line-height: 1.9rem;
         color: #056341;
-        font-size: 1.5rem;
+        font-size: 1.35rem;
         margin-bottom: 150px;
-        text-align: center;
+        text-align: left;
+    }
+
+    .servicios-subtitle {
+        font-size: 1.8rem;
+        text-align: left;
     }
 
 

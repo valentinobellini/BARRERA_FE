@@ -12,6 +12,30 @@
 }
 
 
+@media screen and (max-width: 1080px) {
+    .posts-container {
+        gap: 36px;
+        row-gap: 36px;
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+    .posts-container {
+        gap: 28px;
+        row-gap: 28px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .posts-container {
+        gap: 24px;
+        row-gap: 24px;
+    }
+}
+
+
 
 .post-row:hover {
     cursor: pointer;

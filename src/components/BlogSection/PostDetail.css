@@ -17,12 +17,14 @@
     margin-bottom: 30px;
     font-size: 3.1rem;
     font-family: 'Roboto';
+    line-height: 3.4rem;
 }
 
 .post-detail h2 {
     font-size: 2rem;
     font-weight: 300;
     margin-bottom: 30px;
+    line-height: 2.4rem;
 }
 
 
@@ -100,4 +102,120 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+}
+
+
+@media screen and (max-width: 1080px) {
+    .post-detail {
+        width: 70%;
+        padding: 1.75rem;
+    }
+
+    .post-detail h1 {
+        font-size: 2.8rem;
+        line-height: 3.1rem;
+        margin-bottom: 24px;
+    }
+
+    .post-detail h2 {
+        font-size: 1.7rem;
+        line-height: 2.1rem;
+        margin-bottom: 24px;
+    }
+
+    .content {
+        font-size: 1.4rem;
+        line-height: 2rem;
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+    .post-detail {
+        width: 80%;
+        padding: 1.5rem;
+    }
+
+    .post-detail h1 {
+        font-size: 2.5rem;
+        line-height: 2.8rem;
+    }
+
+    .post-detail h2 {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+
+    .meta-info {
+        gap: 14px;
+    }
+
+    .content {
+        font-size: 1.3rem;
+        line-height: 1.9rem;
+        margin-top: 1.5rem;
+        margin-bottom: 72px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .post-detail {
+        width: 90%;
+        padding: 1.25rem;
+    }
+
+    .post-detail h1 {
+        font-size: 2.3rem;
+        line-height: 2.6rem;
+    }
+
+    .post-detail h2 {
+        font-size: 1.4rem;
+        line-height: 1.9rem;
+        margin-bottom: 20px;
+    }
+
+    .content {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .post-detail {
+        width: 90%;
+        padding: 1rem;
+    }
+
+    .post-detail h1 {
+        font-size: 2.1rem;
+        line-height: 2.4rem;
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+    .post-detail h2 {
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+        margin-bottom: 18px;
+        text-align: left;
+    }
+
+    .meta-item {
+        font-size: 0.9rem;
+    }
+
+    .content {
+        font-size: 1.05rem;
+        line-height: 1.6rem;
+        margin-bottom: 56px;
+        text-align: left;
+    }
+
+    .post-detail-tag {
+        font-size: 0.75rem;
+        padding: 5px 10px;
+    }
 }

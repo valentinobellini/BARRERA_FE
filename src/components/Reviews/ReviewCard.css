@@ -90,10 +90,22 @@
 @media screen and (max-width: 480px) {
     .review-card {
         margin: 30px 0;
+        text-align: left;
+    }
+
+    .review-name {
+        font-size: 1.35rem;
+        text-align: center;
     }
 
     .review-text {
-        font-size: 1.1rem;
+        font-size: 1.05rem;
+        line-height: 1.6rem;
+        text-align: center;
+    }
+
+    .review-stars {
+        text-align: center;
     }
 
     .reviews-carousel {

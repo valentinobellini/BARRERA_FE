@@ -294,9 +294,28 @@
 @media (max-width: 480px) {
     .porque-elegirme-title {
         width: 100%;
-        text-align: center;
-        font-size: 2.3rem;
+        text-align: left;
+        font-size: 2.1rem;
+        line-height: 2.4rem;
+    }
 
+    .porque-elegirme-subtitle {
+        font-size: 1.35rem;
+        line-height: 1.9rem;
+        text-align: left;
+        margin-bottom: 80px;
+    }
+
+    .porque-card h2 {
+        justify-content: flex-start;
+        text-align: left;
+        font-size: 1.45rem;
+    }
+
+    .porque-card li {
+        font-size: 1.2rem;
+        line-height: 1.5rem;
+        text-align: left;
     }
 
 

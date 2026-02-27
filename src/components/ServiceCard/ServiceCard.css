@@ -98,13 +98,15 @@
 
 
     .service-card-title {
-        font-size: 1.5rem;
+        font-size: 1.35rem;
+        line-height: 1.7rem;
         text-align: left;
 
     }
 
     .service-card-text {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+        line-height: 1.7rem;
         text-align: left;
 
     }
