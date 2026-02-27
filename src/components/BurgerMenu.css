@@ -58,8 +58,14 @@
     width: 100%;
     position: fixed;
     inset: 0;
-    top: 130px;
+    top: 150px;
     z-index: 100;
+}
+
+@media (max-width: 480px) {
+    .bm-overlay {
+        top: 110px;
+    }
 }
 
 .bm-backdrop {

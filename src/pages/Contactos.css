@@ -8,6 +8,18 @@
     font-size: 3.1rem;
     font-weight: 800;
     color: #056341;
+    margin-bottom: 16px;
+}
+
+.contacto-title-break {
+    display: none;
+}
+
+.contacto-head {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #056341;
+    line-height: 2.4rem;
     margin-bottom: 48px;
 }
 
@@ -85,6 +97,11 @@
         font-size: 2.5rem;
         line-height: 2.8rem;
     }
+
+    .contacto-head {
+        font-size: 1.7rem;
+        line-height: 2.1rem;
+    }
 }
 
 
@@ -92,6 +109,11 @@
     .contacto-title {
         font-size: 2.3rem;
         line-height: 2.6rem;
+    }
+
+    .contacto-head {
+        font-size: 1.5rem;
+        line-height: 1.9rem;
     }
 
     .contacto-text {
@@ -117,14 +139,26 @@
 
 @media screen and (max-width: 480px) {
 
-
+    .contacto-title-break {
+        display: block;
+    }
 
     .contacto-title {
-        font-size: 2.1rem;
-        line-height: 2.4rem;
+        font-size: 2rem;
+        line-height: 2.3rem;
         font-weight: 800;
         color: #056341;
-        margin-bottom: 36px;
+        margin-bottom: 12px;
+        text-align: left;
+
+    }
+
+    .contacto-head {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #056341;
+        line-height: 1.7rem;
+        margin-bottom: 32px;
         text-align: left;
 
     }
@@ -152,3 +186,4 @@
 
 
 }
+

@@ -96,6 +96,7 @@
 
     .hero {
         align-items: center;
+        width: 90%;
     }
 
     .hero h1,
@@ -104,11 +105,13 @@
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 
+
+
     .hero-head {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
 
     .hero-text {

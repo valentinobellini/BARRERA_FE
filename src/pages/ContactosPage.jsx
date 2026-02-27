@@ -38,8 +38,12 @@ const ContactosPage = () => {
 
 
             <h2 className="contacto-title">
-                Contacta a la Dra. Lucrecia Ceja <br /> Agenda tu Consulta de Medicina Interna en Monterrey
+                Contacta a la <br className="contacto-title-break" /> Dra. Lucrecia Ceja
             </h2>
+
+            <p className="contacto-head">
+                Agenda tu Consulta de Medicina Interna en Monterrey
+            </p>
 
             <p className="contacto-text">
                 Da el primer paso hacia una atención médica integral y personalizada. Agenda tu
@@ -65,7 +69,7 @@ const ContactosPage = () => {
                     className="cta-button contact-button"
                     onClick={() =>
                         window.open(
-                            "https://wa.me/393286886891?text=Ciao%2C%20vorrei%20più%20info",
+                            "https://wa.me/548111589003?text=Hola%2C%20quisiera%20una%20consulta....",
                             "_blank",
                             "noopener,noreferrer"
                         )

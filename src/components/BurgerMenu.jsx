@@ -4,7 +4,7 @@
 // src/components/Nav/BurgerMenu.jsx
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 
 
 
@@ -53,18 +53,26 @@ export default function BurgerMenu({
 
             }
 
-            {open && (
-                <div className="bm-overlay">
+            <AnimatePresence>
+                {open && (
+                    <div className="bm-overlay">
 
-                    {/* clic sul backdrop chiude */}
-                    <div className="bm-backdrop" onClick={() => setOpen(false)} />
+                        {/* clic sul backdrop chiude */}
+                        <motion.div
+                            className="bm-backdrop"
+                            onClick={() => setOpen(false)}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.25, ease: "easeOut" }}
+                        />
 
 
                     <motion.aside className="bm-panel"
-                        initial={{ opacity: 0, x: +200 }}   // parte leggermente sopra il bordo dell’overlay
+                        initial={{ opacity: 0, x: "100%" }}   // parte leggermente sopra il bordo dell’overlay
                         animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: +200 }}
-                        transition={{ duration: 0.6, ease: [0.22, 0.61, 0.36, 1] }}
+                        exit={{ opacity: 0, x: "100%" }}
+                        transition={{ duration: 0.4, ease: [0.22, 0.61, 0.36, 1] }}
                     // transition={{ duration: 0.8, ease: 'easeOut', delay: 0.1, type: 'spring' }}
                     >
 
@@ -85,8 +93,10 @@ export default function BurgerMenu({
                             ))}
                         </ul>
                     </motion.aside>
-                </div>
-            )}
+                    </div>
+                )}
+            </AnimatePresence>
         </>
     );
 }
+

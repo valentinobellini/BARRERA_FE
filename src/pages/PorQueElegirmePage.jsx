@@ -124,7 +124,7 @@ const PorQueElegirmePage = () => {
             transition={{ duration: 1, ease: "easeOut", delay: 0.1, type: "spring" }}
         >
             <h2 className="porque-elegirme-title">
-                Por qué Elegir a la Dra. Lucrecia Ceja <br /> como tu Médico Internista en Monterrey
+                Por qué Elegir a la Dra. Lucrecia Ceja <br className="porque-title-break" /> como tu Médico Internista en Monterrey
             </h2>
 
             <p className="porque-elegirme-subtitle">

@@ -292,11 +292,15 @@
 
 
 @media (max-width: 480px) {
+    .porque-title-break {
+        display: none;
+    }
+
     .porque-elegirme-title {
         width: 100%;
         text-align: left;
-        font-size: 2.1rem;
-        line-height: 2.4rem;
+        font-size: 2rem;
+        line-height: 2.3rem;
     }
 
     .porque-elegirme-subtitle {

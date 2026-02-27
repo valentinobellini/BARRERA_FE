@@ -79,6 +79,9 @@
 
 
 @media screen and (max-width: 480px) {
+    .service-title-break {
+        display: none;
+    }
 
     .service-card .service-img {
         height: auto;

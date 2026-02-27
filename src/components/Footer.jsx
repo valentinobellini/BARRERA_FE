@@ -12,7 +12,7 @@ export default function Footer() {
                 </div>
 
                 <a
-                    href="https://wa.me/393286886891?text=Ciao%2C%20vorrei%20più%20info"
+                    href="https://wa.me/548111589003?text=Hola%2C%20quisiera%20una%20consulta...."
                     target="_blank"
                     rel="noopener noreferrer"
                 >
