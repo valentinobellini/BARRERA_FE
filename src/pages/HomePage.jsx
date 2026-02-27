@@ -43,7 +43,7 @@ const HomePage = () => {
                             title={
                                 <>
                                     Control de
-                                    <br className="service-title-break" />
+                                    <br className="service-title-break" />{" "}
                                     Hipertensión Arterial
                                 </>
                             }

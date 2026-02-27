@@ -553,6 +553,11 @@ Breakpoint	Dispositivi/casi d'uso
 
 @media screen and (max-width: 480px) {
 
+    .slide-in,
+    .slide-out {
+        top: 110px;
+    }
+
     header {
         height: 110px;
     }
@@ -572,7 +577,9 @@ Breakpoint	Dispositivi/casi d'uso
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        /* gap: 70px; */
+        width: 100%;
+        padding-inline: 10px;
+        gap: 24px;
     }
 
     .references-subtitle {
@@ -600,6 +607,10 @@ Breakpoint	Dispositivi/casi d'uso
 
     .footer-legal-link {
         font-size: 0.85rem;
+    }
+
+    .footer-info {
+        margin: 10px 0;
     }
 
 

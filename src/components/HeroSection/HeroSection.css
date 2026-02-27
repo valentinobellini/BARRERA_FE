@@ -124,3 +124,14 @@
 
 
 }
+
+@media screen and (max-width: 460px) {
+
+    .hero-title {
+        font-size: 2.1rem;
+    }
+
+    .hero-head {
+        font-size: 1.5rem;
+    }
+}
