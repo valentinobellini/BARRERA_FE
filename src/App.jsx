@@ -7,6 +7,8 @@ import MainLayout from './layouts/MainLayout'
 
 // Context
 import { PostProvider } from './contexts/PostContext'
+import CookieNoticeOverlay from './components/Cookies/CookieNoticeOverlay';
+import { loadGoogleAnalytics } from './utils/loadGoogleAnalytics';
 
 // Pagine
 import HomePage from './pages/HomePage'
@@ -15,6 +17,7 @@ import PorQueElegirmePage from './pages/PorQueElegirmePage'
 import TrayectoriaPage from './pages/TrayectoriaPage'
 import ContactosPage from './pages/ContactosPage'
 import BlogPage from './pages/BlogPage'
+import AvisoDePrivacidadPage from './pages/AvisoDePrivacidadPage'
 
 import PostDetail from './components/BlogSection/PostDetail'
 import AdminScreen from "./pages/AdminScreen";
@@ -51,6 +54,7 @@ function AnimatedRoutes() {
           <Route path="por-que-elegirme" element={<PorQueElegirmePage />} />
           <Route path="trayectoria-profesional" element={<TrayectoriaPage />} />
           <Route path="contactos" element={<ContactosPage />} />
+          <Route path="aviso-de-privacidad" element={<AvisoDePrivacidadPage />} />
           <Route path="blog" element={<BlogPage />} />
           <Route path="blog/:id/:slug" element={<PostDetail />} />
 
@@ -79,11 +83,16 @@ function AnimatedRoutes() {
 }
 
 export default function App() {
+  useEffect(() => {
+    loadGoogleAnalytics(import.meta.env.VITE_GA_ID);
+  }, []);
+
   return (
     <PostProvider>
       <LenisScroll>
         <BrowserRouter>
           <AnimatedRoutes />
+          <CookieNoticeOverlay />
         </BrowserRouter>
       </LenisScroll>
     </PostProvider>

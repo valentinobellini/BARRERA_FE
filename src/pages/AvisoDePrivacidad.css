@@ -1,0 +1,91 @@
+.aviso-page {
+    max-width: 80%;
+    margin: 0 auto 150px;
+    color: #056341;
+}
+
+.aviso-title {
+    font-size: 3.1rem;
+    font-weight: 800;
+    margin-bottom: 36px;
+}
+
+.aviso-intro {
+    font-size: 1.5rem;
+    line-height: 2.3rem;
+    margin-bottom: 40px;
+}
+
+.aviso-section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 40px 0 18px;
+}
+
+.aviso-text {
+    font-size: 1.3rem;
+    line-height: 2rem;
+    margin-bottom: 16px;
+}
+
+.aviso-list {
+    margin: 0 0 18px 22px;
+    padding: 0;
+}
+
+.aviso-list li {
+    font-size: 1.3rem;
+    line-height: 2rem;
+    margin-bottom: 6px;
+}
+
+.aviso-update {
+    margin-top: 46px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+    .aviso-page {
+        max-width: 90%;
+    }
+
+    .aviso-title {
+        font-size: 2.5rem;
+        line-height: 2.8rem;
+    }
+
+    .aviso-intro {
+        font-size: 1.35rem;
+        line-height: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .aviso-title {
+        font-size: 2rem;
+        line-height: 2.3rem;
+    }
+
+    .aviso-intro {
+        font-size: 1.25rem;
+        line-height: 1.8rem;
+    }
+
+    .aviso-section-title {
+        font-size: 1.5rem;
+        line-height: 1.9rem;
+        margin: 30px 0 14px;
+    }
+
+    .aviso-text,
+    .aviso-list li {
+        font-size: 1.1rem;
+        line-height: 1.7rem;
+    }
+
+    .aviso-update {
+        font-size: 1rem;
+    }
+}
+

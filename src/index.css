@@ -327,6 +327,31 @@ footer {
     align-items: center;
 }
 
+.footer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.footer-legal-links {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+}
+
+.footer-legal-link {
+    color: #056341;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: underline;
+    text-align: left;
+}
+
+.footer-legal-link:hover {
+    opacity: 0.8;
+}
+
 .whatsapp-icon {
     font-size: 3rem;
     color: #056341;
@@ -571,6 +596,10 @@ Breakpoint	Dispositivi/casi d'uso
         font-size: 1.1rem;
         text-align: center;
         width: 100%;
+    }
+
+    .footer-legal-link {
+        font-size: 0.85rem;
     }
 
 

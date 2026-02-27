@@ -50,7 +50,7 @@ const HeroSection = () => {
                 className="cta-button"
                 onClick={() =>
                     window.open(
-                        "https://wa.me/548111589003?text=Hola%2C%20quisiera%20una%20consulta....",
+                        "https://wa.me/528134526945?text=Hola%2C%20quisiera%20una%20consulta....",
                         "_blank",
                         "noopener,noreferrer"
                     )
