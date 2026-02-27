@@ -25,7 +25,7 @@
     text-align: center;
     margin-bottom: 20px;
     font-family: 'Roboto';
-    width: 80%;
+    /* width: 80%; */
 }
 
 .service-card-text {
@@ -80,11 +80,32 @@
 
 @media screen and (max-width: 480px) {
 
+    .service-card .service-img {
+        height: auto;
+        width: 70%;
+        margin: 35px auto;
+        display: flex;
+        justify-content: center;
+    }
+
+
+    .service-card .service-img img {
+        width: 80%;
+        height: 80%;
+        object-fit: cover;
+    }
+
+
+
     .service-card-title {
         font-size: 1.5rem;
+        text-align: left;
+
     }
 
     .service-card-text {
         font-size: 1.2rem;
+        text-align: left;
+
     }
 }

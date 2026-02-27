@@ -528,7 +528,19 @@ Breakpoint	Dispositivi/casi d'uso
 
 @media screen and (max-width: 480px) {
 
+    header {
+        height: 110px;
+    }
 
+    .ecg-container {
+        width: 90px;
+        padding: 5px;
+    }
+
+    .ecg-container p {
+        font-size: 0.65rem;
+
+    }
 
     .services-card-wrapper {
         display: flex;

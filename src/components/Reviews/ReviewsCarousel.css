@@ -47,17 +47,16 @@
 
 
 
-/* 
 
 
 
-@media (max-width: 768px) {
+
+@media (max-width: 480px) {
 
 
     .carousel-viewport {
-        justify-content: center;
-        gap: 8px;
+        width: 65%;
     }
 
 
-} */
+}
