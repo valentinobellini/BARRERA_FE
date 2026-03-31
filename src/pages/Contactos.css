@@ -38,6 +38,8 @@
     color: #056341;
     font-weight: 600;
     text-decoration: underline;
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 
