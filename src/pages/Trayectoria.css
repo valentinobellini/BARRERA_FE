@@ -55,15 +55,6 @@
 @media (max-width: 1600px) {
 
     .logo-wrap {
-        gap: 120px;
-    }
-}
-
-
-
-@media (max-width: 1600px) {
-
-    .logo-wrap {
         gap: 60px;
     }
 }

@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Medicina Interna Monterrey — Design System</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;800;900&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --primary:    #056341;
+      --cta:        #E4572E;
+      --star:       #FA9F47;
+      --tag-bg:     #F1AB96;
+      --bg-section: #F4F4F4;
+      --bg-body:    #ddf5ec;
+      --text-sec:   #6b7280;
+      --text-dark:  #134e3a;
+      --white:      #ffffff;
+    }
+
+    body {
+      background: #f0f0f0;
+      font-family: 'Montserrat', sans-serif;
+      padding: 60px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .ds-wrap {
+      width: 1200px;
+      background: #fff;
+      border-radius: 20px;
+      padding: 64px;
+      display: flex;
+      flex-direction: column;
+      gap: 64px;
+    }
+
+    /* ─── HEADER ─── */
+    .ds-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 28px;
+    }
+    .ds-header h1 {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 800;
+      font-size: 36px;
+      color: var(--primary);
+      line-height: 1;
+    }
+    .ds-header h1 span {
+      display: block;
+      font-weight: 300;
+      font-size: 16px;
+      color: var(--text-sec);
+      margin-top: 6px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .ds-header .badge {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-sec);
+    }
+
+    /* ─── SECTION LABEL ─── */
+    .section-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text-sec);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #e5e7eb;
+    }
+
+    /* ─── COLORS ─── */
+    .colors-grid {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .color-chip {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .color-swatch {
+      width: 100px;
+      height: 80px;
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+    .color-info .color-name {
+      font-weight: 700;
+      font-size: 12px;
+      color: #111;
+    }
+    .color-info .color-hex {
+      font-size: 11px;
+      color: var(--text-sec);
+      font-family: monospace;
+    }
+    .color-info .color-role {
+      font-size: 10px;
+      color: #aaa;
+      margin-top: 2px;
+    }
+
+    /* ─── TYPOGRAPHY ─── */
+    .type-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .type-row {
+      display: flex;
+      align-items: baseline;
+      gap: 28px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .type-meta {
+      width: 160px;
+      flex-shrink: 0;
+    }
+    .type-meta .tm-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-sec);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+    .type-meta .tm-spec {
+      font-size: 10px;
+      color: #aaa;
+      margin-top: 3px;
+      font-family: monospace;
+    }
+
+    /* ─── BUTTONS ─── */
+    .buttons-row {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      border-radius: 8px;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+    .btn-primary {
+      background: var(--cta);
+      color: #fff;
+      padding: 14px 28px;
+      font-size: 14px;
+      box-shadow: 7px 10px 40px 0 rgba(0,0,0,0.25);
+    }
+    .btn-secondary {
+      background: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+      padding: 12px 26px;
+      font-size: 14px;
+    }
+    .btn-ghost {
+      background: transparent;
+      color: var(--text-sec);
+      padding: 12px 20px;
+      font-size: 14px;
+      text-decoration: underline;
+    }
+    .btn-whatsapp {
+      background: #25D366;
+      color: #fff;
+      padding: 14px 28px;
+      font-size: 14px;
+      border-radius: 8px;
+      box-shadow: 7px 10px 40px 0 rgba(0,0,0,0.2);
+    }
+
+    /* ─── CARDS ─── */
+    .cards-row {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+
+    .post-card {
+      width: 280px;
+      background: var(--bg-section);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0px 5px 25px -10px rgba(0,0,0,0.25);
+    }
+    .post-card-img {
+      width: 100%;
+      height: 140px;
+      background: linear-gradient(135deg, #ddf5ec 0%, #b2e8d4 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .post-card-img span {
+      font-size: 36px;
+    }
+    .post-card-body {
+      padding: 16px;
+    }
+    .post-card-tag {
+      display: inline-block;
+      background: var(--tag-bg);
+      color: var(--primary);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+    }
+    .post-card-title {
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--primary);
+      line-height: 1.4;
+      margin-bottom: 6px;
+    }
+    .post-card-meta {
+      font-size: 11px;
+      color: var(--text-sec);
+    }
+
+    .review-card {
+      width: 260px;
+      background: var(--bg-section);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0px 5px 25px -10px rgba(0,0,0,0.25);
+    }
+    .review-stars {
+      color: var(--star);
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    .review-text {
+      font-size: 12px;
+      color: var(--text-sec);
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+    .review-author {
+      font-weight: 800;
+      font-size: 13px;
+      color: var(--primary);
+    }
+    .review-source {
+      font-size: 10px;
+      color: #aaa;
+      margin-top: 2px;
+    }
+
+    .service-card {
+      width: 220px;
+      background: var(--bg-section);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0px 5px 25px -10px rgba(0,0,0,0.25);
+    }
+    .service-card-img {
+      width: 100%;
+      height: 110px;
+      background: linear-gradient(135deg, #056341 0%, #0a9060 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .service-card-img span { font-size: 32px; }
+    .service-card-body { padding: 14px; }
+    .service-card-title {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 800;
+      font-size: 15px;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+    .service-card-desc {
+      font-size: 11px;
+      color: var(--text-sec);
+      line-height: 1.5;
+    }
+
+    /* ─── TAGS ─── */
+    .tags-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .tag {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 5px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+    .tag-default { background: var(--tag-bg); color: var(--primary); }
+    .tag-active   { background: var(--cta); color: #fff; }
+    .tag-outline  { border: 1.5px solid var(--primary); color: var(--primary); background: transparent; }
+
+    /* ─── INPUTS ─── */
+    .inputs-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+    .input-wrap { display: flex; flex-direction: column; gap: 6px; }
+    .input-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-dark);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .input-field {
+      padding: 12px 16px;
+      border: 1.5px solid #d1d5db;
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      color: #111;
+      width: 220px;
+      outline: none;
+    }
+    .input-field:focus { border-color: var(--primary); }
+    .input-field.error { border-color: var(--cta); }
+
+    /* ─── SHADOWS ─── */
+    .shadows-row {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+    .shadow-chip {
+      width: 140px;
+      height: 80px;
+      background: #fff;
+      border-radius: 12px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 10px;
+    }
+    .shadow-chip span {
+      font-size: 10px;
+      color: #aaa;
+      font-family: monospace;
+      text-align: center;
+    }
+    .sh-card    { box-shadow: 7px 10px 40px 0 rgba(0,0,0,0.25); }
+    .sh-header  { box-shadow: 0px 5px 25px -10px rgba(0,0,0,0.25); }
+    .sh-soft    { box-shadow: 0 2px 6px rgba(0,0,0,0.2); }
+    .sh-panel   { box-shadow: 0 10px 30px rgba(0,0,0,0.25); }
+
+    /* ─── RADIUS ─── */
+    .radius-row {
+      display: flex;
+      gap: 24px;
+      align-items: flex-end;
+    }
+    .radius-chip {
+      background: var(--bg-section);
+      border: 2px solid var(--primary);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .radius-chip .r-label {
+      font-size: 11px;
+      font-family: monospace;
+      color: var(--text-sec);
+    }
+    .r4  { width: 60px; height: 60px; border-radius: 4px; }
+    .r8  { width: 70px; height: 70px; border-radius: 8px; }
+    .r12 { width: 80px; height: 80px; border-radius: 12px; }
+    .r16 { width: 90px; height: 90px; border-radius: 16px; }
+    .r50 { width: 60px; height: 60px; border-radius: 50%; }
+
+    /* ─── BREAKPOINTS ─── */
+    .bp-row {
+      display: flex;
+      gap: 16px;
+      align-items: flex-end;
+    }
+    .bp-chip {
+      background: var(--bg-section);
+      border-radius: 8px;
+      padding: 12px 16px;
+      text-align: center;
+    }
+    .bp-size {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 800;
+      font-size: 18px;
+      color: var(--primary);
+    }
+    .bp-name {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--text-sec);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-top: 4px;
+    }
+    .bp-desc {
+      font-size: 10px;
+      color: #aaa;
+      margin-top: 2px;
+    }
+
+    /* ─── FOOTER ROW ─── */
+    .ds-footer {
+      border-top: 1px solid #e5e7eb;
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .ds-footer .stack {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .stack-chip {
+      background: var(--bg-section);
+      border-radius: 6px;
+      padding: 5px 12px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+    .ds-footer .version {
+      font-size: 11px;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+<div class="ds-wrap">
+
+  <!-- HEADER -->
+  <div class="ds-header">
+    <h1>
+      Medicina Interna Monterrey
+      <span>Design System · v1.0</span>
+    </h1>
+    <span class="badge">Dra. Ceja · 2025</span>
+  </div>
+
+  <!-- COLORS -->
+  <div>
+    <div class="section-label">01 · Color Palette</div>
+    <div class="colors-grid">
+      <div class="color-chip">
+        <div class="color-swatch" style="background:#056341"></div>
+        <div class="color-info">
+          <div class="color-name">Primary</div>
+          <div class="color-hex">#056341</div>
+          <div class="color-role">Text · Headings · Borders</div>
+        </div>
+      </div>
+      <div class="color-chip">
+        <div class="color-swatch" style="background:#E4572E"></div>
+        <div class="color-info">
+          <div class="color-name">CTA / Action</div>
+          <div class="color-hex">#E4572E</div>
+          <div class="color-role">Buttons · Hover states</div>
+        </div>
+      </div>
+      <div class="color-chip">
+        <div class="color-swatch" style="background:#FA9F47"></div>
+        <div class="color-info">
+          <div class="color-name">Accent / Star</div>
+          <div class="color-hex">#FA9F47</div>
+          <div class="color-role">Ratings · Highlights</div>
+        </div>
+      </div>
+      <div class="color-chip">
+        <div class="color-swatch" style="background:#F1AB96"></div>
+        <div class="color-info">
+          <div class="color-name">Tag Background</div>
+          <div class="color-hex">#F1AB96</div>
+          <div class="color-role">Post tags · Badges</div>
+        </div>
+      </div>
+      <div class="color-chip">
+        <div class="color-swatch" style="background:#ddf5ec"></div>
+        <div class="color-info">
+          <div class="color-name">Body Background</div>
+          <div class="color-hex">#ddf5ec</div>
+          <div class="color-role">Page background</div>
+        </div>
+      </div>
+      <div class="color-chip">
+        <div class="color-swatch" style="background:#F4F4F4; border: 1px solid #e0e0e0"></div>
+        <div class="color-info">
+          <div class="color-name">Section BG</div>
+          <div class="color-hex">#F4F4F4</div>
+          <div class="color-role">Cards · Sections</div>
+        </div>
+      </div>
+      <div class="color-chip">
+        <div class="color-swatch" style="background:#134e3a"></div>
+        <div class="color-info">
+          <div class="color-name">Text Dark</div>
+          <div class="color-hex">#134e3a</div>
+          <div class="color-role">Secondary headings</div>
+        </div>
+      </div>
+      <div class="color-chip">
+        <div class="color-swatch" style="background:#6b7280"></div>
+        <div class="color-info">
+          <div class="color-name">Text Secondary</div>
+          <div class="color-hex">#6b7280</div>
+          <div class="color-role">Body · Meta · Captions</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TYPOGRAPHY -->
+  <div>
+    <div class="section-label">02 · Typography</div>
+    <div class="type-rows">
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="tm-label">H1 Hero</div>
+          <div class="tm-spec">Roboto 800 · 4rem</div>
+        </div>
+        <div style="font-family:'Roboto',sans-serif; font-weight:800; font-size:42px; color:#056341; line-height:1;">
+          Medicina Interna
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="tm-label">H2 Section</div>
+          <div class="tm-spec">Roboto 800 · 3.1rem</div>
+        </div>
+        <div style="font-family:'Roboto',sans-serif; font-weight:800; font-size:32px; color:#056341; line-height:1.1;">
+          Nuestros Servicios
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="tm-label">Hero Subtitle</div>
+          <div class="tm-spec">Roboto 300 · 3.1rem</div>
+        </div>
+        <div style="font-family:'Roboto',sans-serif; font-weight:300; font-size:32px; color:#056341; line-height:1.1;">
+          Especialista en adultos
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="tm-label">Nav Links</div>
+          <div class="tm-spec">Roboto 800 · 1.2rem</div>
+        </div>
+        <div style="font-family:'Roboto',sans-serif; font-weight:800; font-size:18px; color:#056341; letter-spacing:0.5px; display:flex; gap:32px;">
+          <span>Inicio</span><span>Servicios</span><span>Blog</span><span>Contacto</span>
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="tm-label">Post Title</div>
+          <div class="tm-spec">Montserrat 600 · 18px</div>
+        </div>
+        <div style="font-family:'Montserrat',sans-serif; font-weight:600; font-size:18px; color:#056341; line-height:1.4;">
+          Consulta Médica Integral
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="tm-label">Body Text</div>
+          <div class="tm-spec">Montserrat 400 · 1.2rem</div>
+        </div>
+        <div style="font-family:'Montserrat',sans-serif; font-weight:400; font-size:15px; color:#6b7280; line-height:1.7; max-width:600px;">
+          La medicina interna abarca el diagnóstico y tratamiento de enfermedades en adultos. Nuestro enfoque es integral, personalizado y basado en evidencia clínica.
+        </div>
+      </div>
+      <div class="type-row" style="border-bottom:none;">
+        <div class="type-meta">
+          <div class="tm-label">Caption / Meta</div>
+          <div class="tm-spec">Montserrat 400 · 12px</div>
+        </div>
+        <div style="font-family:'Montserrat',sans-serif; font-weight:400; font-size:12px; color:#6b7280; display:flex; gap:16px;">
+          <span>15 mar 2025</span><span>·</span><span>5 min lectura</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BUTTONS -->
+  <div>
+    <div class="section-label">03 · Buttons</div>
+    <div class="buttons-row">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+        <button class="btn btn-primary">Agenda tu cita</button>
+        <span style="font-size:10px;color:#aaa;font-weight:700;text-transform:uppercase;letter-spacing:1px;">Primary CTA</span>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+        <button class="btn btn-secondary">Ver servicios</button>
+        <span style="font-size:10px;color:#aaa;font-weight:700;text-transform:uppercase;letter-spacing:1px;">Secondary</span>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+        <button class="btn btn-ghost">Leer más →</button>
+        <span style="font-size:10px;color:#aaa;font-weight:700;text-transform:uppercase;letter-spacing:1px;">Ghost / Link</span>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+        <button class="btn btn-whatsapp">💬 WhatsApp</button>
+        <span style="font-size:10px;color:#aaa;font-weight:700;text-transform:uppercase;letter-spacing:1px;">WhatsApp</span>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+        <button class="btn btn-primary" style="opacity:0.5;cursor:not-allowed;">Deshabilitado</button>
+        <span style="font-size:10px;color:#aaa;font-weight:700;text-transform:uppercase;letter-spacing:1px;">Disabled</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARDS -->
+  <div>
+    <div class="section-label">04 · Cards</div>
+    <div class="cards-row">
+      <!-- Post Card -->
+      <div>
+        <div style="font-size:10px;color:#aaa;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;">Post Card</div>
+        <div class="post-card">
+          <div class="post-card-img"><span>🩺</span></div>
+          <div class="post-card-body">
+            <span class="post-card-tag">Diagnóstico</span>
+            <div class="post-card-title">Consulta Médica Integral para Adultos</div>
+            <div class="post-card-meta">15 mar 2025 · 5 min lectura</div>
+          </div>
+        </div>
+      </div>
+      <!-- Review Card -->
+      <div>
+        <div style="font-size:10px;color:#aaa;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;">Review Card</div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">"Excelente atención, muy profesional y empática. La doctora explica todo con mucha claridad."</div>
+          <div class="review-author">María G.</div>
+          <div class="review-source">Doctoralia · 2025</div>
+        </div>
+      </div>
+      <!-- Service Card -->
+      <div>
+        <div style="font-size:10px;color:#aaa;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;">Service Card</div>
+        <div class="service-card">
+          <div class="service-card-img"><span>💊</span></div>
+          <div class="service-card-body">
+            <div class="service-card-title">Medicina Preventiva</div>
+            <div class="service-card-desc">Evaluación completa para prevención y diagnóstico temprano.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAGS & INPUTS -->
+  <div style="display:flex;gap:60px;flex-wrap:wrap;">
+    <div style="flex:1;min-width:300px;">
+      <div class="section-label">05 · Tags</div>
+      <div class="tags-row">
+        <span class="tag tag-default">Diagnóstico</span>
+        <span class="tag tag-default">Prevención</span>
+        <span class="tag tag-active">Cardiología</span>
+        <span class="tag tag-outline">Diabetes</span>
+        <span class="tag tag-outline">Hipertensión</span>
+      </div>
+    </div>
+    <div style="flex:1;min-width:300px;">
+      <div class="section-label">06 · Inputs</div>
+      <div class="inputs-row">
+        <div class="input-wrap">
+          <label class="input-label">Nombre</label>
+          <input class="input-field" type="text" placeholder="Tu nombre" />
+        </div>
+        <div class="input-wrap">
+          <label class="input-label" style="color:#E4572E;">Email · Error</label>
+          <input class="input-field error" type="email" placeholder="email@ejemplo.com" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHADOWS -->
+  <div style="display:flex;gap:60px;flex-wrap:wrap;">
+    <div style="flex:1;min-width:300px;">
+      <div class="section-label">07 · Shadows</div>
+      <div class="shadows-row">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+          <div class="shadow-chip sh-card"><span>Card</span></div>
+          <span style="font-size:10px;color:#aaa;font-family:monospace;">7px 10px 40px</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+          <div class="shadow-chip sh-header"><span>Header</span></div>
+          <span style="font-size:10px;color:#aaa;font-family:monospace;">0 5px 25px -10px</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+          <div class="shadow-chip sh-soft"><span>Soft</span></div>
+          <span style="font-size:10px;color:#aaa;font-family:monospace;">0 2px 6px</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+          <div class="shadow-chip sh-panel"><span>Panel</span></div>
+          <span style="font-size:10px;color:#aaa;font-family:monospace;">0 10px 30px</span>
+        </div>
+      </div>
+    </div>
+    <div style="flex:1;min-width:300px;">
+      <div class="section-label">08 · Border Radius</div>
+      <div class="radius-row">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+          <div class="radius-chip r4"></div>
+          <span style="font-size:10px;color:#aaa;font-family:monospace;">4px</span>
+          <span style="font-size:9px;color:#ccc;">Forms</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+          <div class="radius-chip r8"></div>
+          <span style="font-size:10px;color:#aaa;font-family:monospace;">8px</span>
+          <span style="font-size:9px;color:#ccc;">Buttons</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+          <div class="radius-chip r12"></div>
+          <span style="font-size:10px;color:#aaa;font-family:monospace;">12px</span>
+          <span style="font-size:9px;color:#ccc;">Service card</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+          <div class="radius-chip r16"></div>
+          <span style="font-size:10px;color:#aaa;font-family:monospace;">16px</span>
+          <span style="font-size:9px;color:#ccc;">Cards</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+          <div class="radius-chip r50"></div>
+          <span style="font-size:10px;color:#aaa;font-family:monospace;">50%</span>
+          <span style="font-size:9px;color:#ccc;">Pills / Circle</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BREAKPOINTS -->
+  <div>
+    <div class="section-label">09 · Breakpoints</div>
+    <div class="bp-row">
+      <div class="bp-chip">
+        <div class="bp-size">1220px+</div>
+        <div class="bp-name">Desktop</div>
+        <div class="bp-desc">Container 80%</div>
+      </div>
+      <div class="bp-chip">
+        <div class="bp-size">1024px</div>
+        <div class="bp-name">Tablet</div>
+        <div class="bp-desc">Container 90%</div>
+      </div>
+      <div class="bp-chip">
+        <div class="bp-size">768px</div>
+        <div class="bp-name">Mobile</div>
+        <div class="bp-desc">Single column</div>
+      </div>
+      <div class="bp-chip">
+        <div class="bp-size">480px</div>
+        <div class="bp-name">Small</div>
+        <div class="bp-desc">Header 110px</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="ds-footer">
+    <div class="stack">
+      <span class="stack-chip">React 19</span>
+      <span class="stack-chip">Vite</span>
+      <span class="stack-chip">Framer Motion</span>
+      <span class="stack-chip">Lottie</span>
+      <span class="stack-chip">Lenis Scroll</span>
+      <span class="stack-chip">React Router 7</span>
+      <span class="stack-chip">Roboto + Montserrat</span>
+    </div>
+    <span class="version">medicinainternamonterrey.com · 2025</span>
+  </div>
+
+</div>
+</body>
+</html>

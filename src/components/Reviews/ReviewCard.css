@@ -77,12 +77,18 @@
     }
 }
 
-
-
 @media screen and (max-width: 1024px) {
 
     .review-card {
-        width: 300px;
+        width: 260px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .review-card {
+        width: 260px;
+        margin: 40px 0;
     }
 }
 

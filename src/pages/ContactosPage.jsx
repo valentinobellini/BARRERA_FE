@@ -47,8 +47,8 @@ const ContactosPage = () => {
 
             <p className="contacto-text">
                 Da el primer paso hacia una atención médica integral y personalizada. Agenda tu
-                cita llamando al (81) 11 58 90 03 o enviando un correo a <a href="mailto:consulmedicinainterna@gmail.com">
-                    consulmedicinainterna@gmail.com
+                cita llamando al <strong>(81) 11 58 60 03</strong> o enviando un correo a <a href="mailto:consulmedicinainterna@gmail.com">
+                    consulmedicinainterna9@gmail.com
                 </a>.
             </p>
             <p className="contacto-text">

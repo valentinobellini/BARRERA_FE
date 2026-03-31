@@ -8,7 +8,6 @@ import MainLayout from './layouts/MainLayout'
 // Context
 import { PostProvider } from './contexts/PostContext'
 import CookieNoticeOverlay from './components/Cookies/CookieNoticeOverlay';
-import { loadGoogleAnalytics } from './utils/loadGoogleAnalytics';
 
 // Pagine
 import HomePage from './pages/HomePage'
@@ -83,10 +82,6 @@ function AnimatedRoutes() {
 }
 
 export default function App() {
-  useEffect(() => {
-    loadGoogleAnalytics(import.meta.env.VITE_GA_ID);
-  }, []);
-
   return (
     <PostProvider>
       <LenisScroll>

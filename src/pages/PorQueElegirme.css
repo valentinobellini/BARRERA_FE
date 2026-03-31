@@ -290,6 +290,24 @@
     }
 }
 
+@media (max-width: 768px) {
+    .porque-carousel-wrapper {
+        width: 85vw;
+    }
+
+    .porque-card {
+        width: 85vw;
+    }
+
+    .porque-elegirme-title {
+        font-size: 2.2rem;
+    }
+
+    .porque-elegirme-subtitle {
+        font-size: 1.3rem;
+        margin-bottom: 80px;
+    }
+}
 
 @media (max-width: 480px) {
     .porque-title-break {
@@ -308,6 +326,14 @@
         line-height: 1.9rem;
         text-align: left;
         margin-bottom: 80px;
+    }
+
+    .porque-carousel-wrapper {
+        width: 90vw;
+    }
+
+    .porque-card {
+        width: 90vw;
     }
 
     .porque-card h2 {
