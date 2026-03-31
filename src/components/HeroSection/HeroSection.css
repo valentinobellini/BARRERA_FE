@@ -18,7 +18,7 @@
     font-weight: 300;
     color: #056341;
     text-align: left;
-    margin-bottom: 74px;
+    margin-bottom: 42px;
 }
 
 
@@ -41,23 +41,36 @@
 
 
 .hero-wrap {
-    display: flex;
-    justify-content: flex-start;
-    gap: 50px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(210px, 320px);
+    gap: 36px;
+    align-items: stretch;
 }
 
 .hero-image {
     display: flex;
-    justify-content: start;
-    align-items: flex-start;
-    border: 1px solid green;
+    justify-content: center;
+    align-items: stretch;
+    order: 2;
+}
+
+.hero-text-wrap {
+    width: 100%;
+    order: 1;
 }
 
 .hero-image img {
-    width: 90%;
-    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 18px;
+    object-fit: cover;
+}
 
-    filter: grayscale(100%) contrast(1.05) brightness(0.95);
+.hero-image picture {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 /* .cta-button {
@@ -85,6 +98,33 @@
 
     .hero-head {
         font-size: 2.3rem;
+        margin-bottom: 30px;
+    }
+
+    .hero-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .hero-image {
+        order: 1;
+        width: 100%;
+        align-items: center;
+    }
+
+    .hero-text-wrap {
+        order: 2;
+    }
+
+    .hero-image picture {
+        height: auto;
+    }
+
+    .hero-image img {
+        width: 100%;
+        height: auto;
+        margin: 0;
     }
 
 }
@@ -93,11 +133,20 @@
 
     .hero {
         width: 90%;
+        align-items: stretch;
     }
 
     .hero-wrap {
-        flex-direction: column;
-        gap: 30px;
+        gap: 22px;
+    }
+
+    .hero-image {
+        align-items: center;
+        order: 1;
+    }
+
+    .hero-text-wrap {
+        order: 2;
     }
 
     .hero-title {
@@ -106,7 +155,7 @@
 
     .hero-head {
         font-size: 2rem;
-        margin-bottom: 40px;
+        margin-bottom: 24px;
     }
 
     .hero-text {
@@ -114,7 +163,8 @@
     }
 
     .hero-image img {
-        width: 70%;
+        width: 100%;
+        height: auto;
         margin: 0 auto;
         display: block;
     }
@@ -127,7 +177,7 @@
 @media screen and (max-width: 480px) {
 
     .hero {
-        align-items: center;
+        align-items: stretch;
         width: 90%;
     }
 
@@ -144,6 +194,7 @@
 
     .hero-head {
         font-size: 1.6rem;
+        margin-bottom: 20px;
     }
 
     .hero-text {
@@ -152,6 +203,10 @@
         font-size: 1.2rem;
         line-height: 1.8rem;
         margin-bottom: 48px;
+    }
+
+    .hero-image img {
+        width: 100%;
     }
 
 

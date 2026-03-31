@@ -1,4 +1,4 @@
-// import { Link } from 'react-router-dom'
+﻿// import { Link } from 'react-router-dom'
 import './HeroSection.css'
 import { motion } from 'framer-motion'
 
@@ -8,14 +8,12 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 250 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: 'easeOut', delay: 0.1, type: 'spring' }}>
-            <h1 className="hero-title"
-            >
+            <h1 className="hero-title">
                 Dra. Lucrecia Ceja Barrera
             </h1>
             <p className="hero-head">Médico Internista en Monterrey,<br />
                 Especialista en Medicina Interna
             </p>
-
 
             {/* <p className="hero-text">
                 La Dra. Lucrecia Ceja Barrera es una especialista en Medicina Interna con más de 30 años de experiencia en Monterrey, N.L. Brindando atención integral, la Dra. Ceja se enfoca en el tratamiento de enfermedades crónicas como diabetes e hipertensión, con un compromiso hacia el bienestar y la calidad de vida de sus pacientes.
@@ -36,15 +34,13 @@ const HeroSection = () => {
                     </p>
                 </div>
 
-
-                {/* <div className="hero-image"><img src='img/doc1.jpeg' alt="" /></div> */}
-
-
-
+                <div className="hero-image">
+                    <picture>
+                        <source media="(max-width: 1024px)" srcSet="/images/home-hero-horizontal.png" />
+                        <img src="/images/home-hero-vertical.png" alt="Dra. Lucrecia Ceja Barrera" />
+                    </picture>
+                </div>
             </div>
-
-
-
 
             <button
                 className="cta-button"
